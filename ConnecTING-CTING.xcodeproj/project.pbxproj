@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B6A3F52A8E0ADBF1CB5F77E /* Pods_ConnecTING_CTING_ConnecTING_CTINGUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4037F9FE9CD8921B9645AFDD /* Pods_ConnecTING_CTING_ConnecTING_CTINGUITests.framework */; };
+		181DE5B14D1F441B474CE41E /* Pods_ConnecTING_CTINGTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1E891D13C9F31151E59C1E8 /* Pods_ConnecTING_CTINGTests.framework */; };
 		7DCE2DE626692A63002AE016 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCE2DE526692A63002AE016 /* AppDelegate.swift */; };
 		7DCE2DE826692A63002AE016 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCE2DE726692A63002AE016 /* SceneDelegate.swift */; };
 		7DCE2DEA26692A63002AE016 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCE2DE926692A63002AE016 /* ViewController.swift */; };
@@ -15,6 +17,8 @@
 		7DCE2DF226692A66002AE016 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DCE2DF026692A66002AE016 /* LaunchScreen.storyboard */; };
 		7DCE2DFD26692A66002AE016 /* ConnecTING_CTINGTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCE2DFC26692A66002AE016 /* ConnecTING_CTINGTests.swift */; };
 		7DCE2E0826692A66002AE016 /* ConnecTING_CTINGUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCE2E0726692A66002AE016 /* ConnecTING_CTINGUITests.swift */; };
+		7DF82C9B2669330E00DF3405 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF82C9A2669330E00DF3405 /* RegisterViewController.swift */; };
+		F0252B2F6A28771A10B7CE2E /* Pods_ConnecTING_CTING.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C596BA5A8D33B967741A6B8D /* Pods_ConnecTING_CTING.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4037F9FE9CD8921B9645AFDD /* Pods_ConnecTING_CTING_ConnecTING_CTINGUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ConnecTING_CTING_ConnecTING_CTINGUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4A41C9DF2BE81C0E01BFFD9B /* Pods-ConnecTING-CTINGTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConnecTING-CTINGTests.release.xcconfig"; path = "Target Support Files/Pods-ConnecTING-CTINGTests/Pods-ConnecTING-CTINGTests.release.xcconfig"; sourceTree = "<group>"; };
 		7DCE2DE226692A63002AE016 /* ConnecTING-CTING.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ConnecTING-CTING.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DCE2DE526692A63002AE016 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7DCE2DE726692A63002AE016 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +55,14 @@
 		7DCE2E0326692A66002AE016 /* ConnecTING-CTINGUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ConnecTING-CTINGUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DCE2E0726692A66002AE016 /* ConnecTING_CTINGUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnecTING_CTINGUITests.swift; sourceTree = "<group>"; };
 		7DCE2E0926692A66002AE016 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7DF82C9A2669330E00DF3405 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		8A4C2F0F301C9C805DEF5F6E /* Pods-ConnecTING-CTING-ConnecTING-CTINGUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConnecTING-CTING-ConnecTING-CTINGUITests.debug.xcconfig"; path = "Target Support Files/Pods-ConnecTING-CTING-ConnecTING-CTINGUITests/Pods-ConnecTING-CTING-ConnecTING-CTINGUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		99FE035ED627C2F2AFA09E7B /* Pods-ConnecTING-CTINGTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConnecTING-CTINGTests.debug.xcconfig"; path = "Target Support Files/Pods-ConnecTING-CTINGTests/Pods-ConnecTING-CTINGTests.debug.xcconfig"; sourceTree = "<group>"; };
+		A23D4F7D96367ADBB9AF6513 /* Pods-ConnecTING-CTING.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConnecTING-CTING.debug.xcconfig"; path = "Target Support Files/Pods-ConnecTING-CTING/Pods-ConnecTING-CTING.debug.xcconfig"; sourceTree = "<group>"; };
+		C596BA5A8D33B967741A6B8D /* Pods_ConnecTING_CTING.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ConnecTING_CTING.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB8088F7019F4B9D77782E54 /* Pods-ConnecTING-CTING-ConnecTING-CTINGUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConnecTING-CTING-ConnecTING-CTINGUITests.release.xcconfig"; path = "Target Support Files/Pods-ConnecTING-CTING-ConnecTING-CTINGUITests/Pods-ConnecTING-CTING-ConnecTING-CTINGUITests.release.xcconfig"; sourceTree = "<group>"; };
+		DEB9CB672E0803CB36440953 /* Pods-ConnecTING-CTING.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConnecTING-CTING.release.xcconfig"; path = "Target Support Files/Pods-ConnecTING-CTING/Pods-ConnecTING-CTING.release.xcconfig"; sourceTree = "<group>"; };
+		F1E891D13C9F31151E59C1E8 /* Pods_ConnecTING_CTINGTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ConnecTING_CTINGTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0252B2F6A28771A10B7CE2E /* Pods_ConnecTING_CTING.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				181DE5B14D1F441B474CE41E /* Pods_ConnecTING_CTINGTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B6A3F52A8E0ADBF1CB5F77E /* Pods_ConnecTING_CTING_ConnecTING_CTINGUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +100,8 @@
 				7DCE2DFB26692A66002AE016 /* ConnecTING-CTINGTests */,
 				7DCE2E0626692A66002AE016 /* ConnecTING-CTINGUITests */,
 				7DCE2DE326692A63002AE016 /* Products */,
+				9F240755F292DB564CE86442 /* Pods */,
+				8F64FBF5BFB13793A3855544 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -103,6 +122,7 @@
 				7DCE2DE726692A63002AE016 /* SceneDelegate.swift */,
 				7DCE2DE926692A63002AE016 /* ViewController.swift */,
 				7DCE2DEB26692A63002AE016 /* Main.storyboard */,
+				7DF82C9A2669330E00DF3405 /* RegisterViewController.swift */,
 				7DCE2DEE26692A66002AE016 /* Assets.xcassets */,
 				7DCE2DF026692A66002AE016 /* LaunchScreen.storyboard */,
 				7DCE2DF326692A66002AE016 /* Info.plist */,
@@ -128,6 +148,30 @@
 			path = "ConnecTING-CTINGUITests";
 			sourceTree = "<group>";
 		};
+		8F64FBF5BFB13793A3855544 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C596BA5A8D33B967741A6B8D /* Pods_ConnecTING_CTING.framework */,
+				4037F9FE9CD8921B9645AFDD /* Pods_ConnecTING_CTING_ConnecTING_CTINGUITests.framework */,
+				F1E891D13C9F31151E59C1E8 /* Pods_ConnecTING_CTINGTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9F240755F292DB564CE86442 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A23D4F7D96367ADBB9AF6513 /* Pods-ConnecTING-CTING.debug.xcconfig */,
+				DEB9CB672E0803CB36440953 /* Pods-ConnecTING-CTING.release.xcconfig */,
+				8A4C2F0F301C9C805DEF5F6E /* Pods-ConnecTING-CTING-ConnecTING-CTINGUITests.debug.xcconfig */,
+				DB8088F7019F4B9D77782E54 /* Pods-ConnecTING-CTING-ConnecTING-CTINGUITests.release.xcconfig */,
+				99FE035ED627C2F2AFA09E7B /* Pods-ConnecTING-CTINGTests.debug.xcconfig */,
+				4A41C9DF2BE81C0E01BFFD9B /* Pods-ConnecTING-CTINGTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +179,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7DCE2E0C26692A66002AE016 /* Build configuration list for PBXNativeTarget "ConnecTING-CTING" */;
 			buildPhases = (
+				5D866BE117C0D526378CB1F5 /* [CP] Check Pods Manifest.lock */,
 				7DCE2DDE26692A63002AE016 /* Sources */,
 				7DCE2DDF26692A63002AE016 /* Frameworks */,
 				7DCE2DE026692A63002AE016 /* Resources */,
+				F6AF356F9AAD924EA9F3CAF8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -152,9 +198,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7DCE2E0F26692A66002AE016 /* Build configuration list for PBXNativeTarget "ConnecTING-CTINGTests" */;
 			buildPhases = (
+				B031E525DFC41F42B3D5C5D2 /* [CP] Check Pods Manifest.lock */,
 				7DCE2DF426692A66002AE016 /* Sources */,
 				7DCE2DF526692A66002AE016 /* Frameworks */,
 				7DCE2DF626692A66002AE016 /* Resources */,
+				F9A0F691B54137A96053C5E0 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -170,9 +218,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7DCE2E1226692A66002AE016 /* Build configuration list for PBXNativeTarget "ConnecTING-CTINGUITests" */;
 			buildPhases = (
+				682A45E14FFB7BF2220278B1 /* [CP] Check Pods Manifest.lock */,
 				7DCE2DFF26692A66002AE016 /* Sources */,
 				7DCE2E0026692A66002AE016 /* Frameworks */,
 				7DCE2E0126692A66002AE016 /* Resources */,
+				8B469B7319A501004B48ACB7 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -253,6 +303,126 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		5D866BE117C0D526378CB1F5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ConnecTING-CTING-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		682A45E14FFB7BF2220278B1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ConnecTING-CTING-ConnecTING-CTINGUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8B469B7319A501004B48ACB7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ConnecTING-CTING-ConnecTING-CTINGUITests/Pods-ConnecTING-CTING-ConnecTING-CTINGUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ConnecTING-CTING-ConnecTING-CTINGUITests/Pods-ConnecTING-CTING-ConnecTING-CTINGUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ConnecTING-CTING-ConnecTING-CTINGUITests/Pods-ConnecTING-CTING-ConnecTING-CTINGUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B031E525DFC41F42B3D5C5D2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ConnecTING-CTINGTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F6AF356F9AAD924EA9F3CAF8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ConnecTING-CTING/Pods-ConnecTING-CTING-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ConnecTING-CTING/Pods-ConnecTING-CTING-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ConnecTING-CTING/Pods-ConnecTING-CTING-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F9A0F691B54137A96053C5E0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ConnecTING-CTINGTests/Pods-ConnecTING-CTINGTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ConnecTING-CTINGTests/Pods-ConnecTING-CTINGTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ConnecTING-CTINGTests/Pods-ConnecTING-CTINGTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		7DCE2DDE26692A63002AE016 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -261,6 +431,7 @@
 				7DCE2DEA26692A63002AE016 /* ViewController.swift in Sources */,
 				7DCE2DE626692A63002AE016 /* AppDelegate.swift in Sources */,
 				7DCE2DE826692A63002AE016 /* SceneDelegate.swift in Sources */,
+				7DF82C9B2669330E00DF3405 /* RegisterViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -433,6 +604,7 @@
 		};
 		7DCE2E0D26692A66002AE016 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A23D4F7D96367ADBB9AF6513 /* Pods-ConnecTING-CTING.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -452,6 +624,7 @@
 		};
 		7DCE2E0E26692A66002AE016 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DEB9CB672E0803CB36440953 /* Pods-ConnecTING-CTING.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -471,6 +644,7 @@
 		};
 		7DCE2E1026692A66002AE016 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 99FE035ED627C2F2AFA09E7B /* Pods-ConnecTING-CTINGTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -493,6 +667,7 @@
 		};
 		7DCE2E1126692A66002AE016 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4A41C9DF2BE81C0E01BFFD9B /* Pods-ConnecTING-CTINGTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -515,6 +690,7 @@
 		};
 		7DCE2E1326692A66002AE016 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8A4C2F0F301C9C805DEF5F6E /* Pods-ConnecTING-CTING-ConnecTING-CTINGUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -535,6 +711,7 @@
 		};
 		7DCE2E1426692A66002AE016 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DB8088F7019F4B9D77782E54 /* Pods-ConnecTING-CTING-ConnecTING-CTINGUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
