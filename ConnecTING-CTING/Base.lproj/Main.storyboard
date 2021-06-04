@@ -91,12 +91,12 @@
                                 </connections>
                             </button>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="Vvi-LI-DPH" userLabel="loginIndicator">
-                                <rect key="frame" x="349" y="447" width="42" height="43"/>
+                                <rect key="frame" x="349" y="445" width="42" height="43"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="color" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </activityIndicatorView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eAR-7y-L3J" userLabel="findpasswordButton">
-                                <rect key="frame" x="251" y="498" width="140" height="21"/>
+                                <rect key="frame" x="237" y="498" width="140" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <state key="normal" title="find password">
@@ -132,7 +132,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-17.39130434782609" y="105.80357142857143"/>
+            <point key="canvasLocation" x="226" y="-458"/>
         </scene>
         <!--Register View Controller-->
         <scene sceneID="R2t-5T-H2y">
@@ -207,7 +207,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZZs-VQ-wZU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1034.7826086956522" y="-179.46428571428569"/>
+            <point key="canvasLocation" x="1035" y="-802"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="gGd-oj-YHq">
@@ -222,7 +222,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uIN-nu-iuh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1035" y="490"/>
+            <point key="canvasLocation" x="1035" y="-131"/>
         </scene>
     </scenes>
     <resources>

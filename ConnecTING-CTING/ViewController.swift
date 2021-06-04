@@ -8,8 +8,6 @@
 import UIKit
 import Parse
 
-
-
 class ViewController: UIViewController {
 
     @IBOutlet weak var usernameTextField: UITextField!
@@ -40,9 +38,6 @@ class ViewController: UIViewController {
         alert.addAction(okAction)
         self.present(alert, animated: true)
     }
-    
-    
-    
     
     @IBAction func register(_ sender: Any) {
         performSegue(withIdentifier: "registerSegue", sender: Any?(nilLiteral: ()))
