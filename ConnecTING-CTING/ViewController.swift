@@ -34,7 +34,7 @@ class ViewController: UIViewController {
     
     func displayAlert(withTitle title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "Ok", style: .default)
+        let okAction = UIAlertAction(title: "Ok", style: .default, handler: {action in self.performSegue(withIdentifier: "loginSegue", sender: Any?.self)})
         alert.addAction(okAction)
         self.present(alert, animated: true)
     }
