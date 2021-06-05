@@ -6,6 +6,7 @@ cting that allows people share ideas --
   - user can login
 
 
-2021 June 4:
-  - will make home screen ( table view ), where user can post questions asking ideas for their daily life problems or share their ideas.
-  two split screens and 
+
+June 5
+
+  - user can logout
