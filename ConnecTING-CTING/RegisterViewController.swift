@@ -31,6 +31,12 @@ class RegisterViewController: UIViewController {
         let user = PFUser()
         user.username = usernameTextField.text
         user.password = passwordTextField.text
+        
+        /*
+         user.email = "email@example.com"
+                                            // other fields can be set just like with PFObject
+           user["phone"] = "415-392-0202"
+        */
         self.indicatorsignup.startAnimating()
         
         if (self.isusernameValid(username: self.usernameTextField.text!) == false){

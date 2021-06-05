@@ -3,12 +3,15 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		0B6A3F52A8E0ADBF1CB5F77E /* Pods_ConnecTING_CTING_ConnecTING_CTINGUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4037F9FE9CD8921B9645AFDD /* Pods_ConnecTING_CTING_ConnecTING_CTINGUITests.framework */; };
 		181DE5B14D1F441B474CE41E /* Pods_ConnecTING_CTINGTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1E891D13C9F31151E59C1E8 /* Pods_ConnecTING_CTINGTests.framework */; };
+		7D25A281266C3760009A0100 /* signoutTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D25A280266C3760009A0100 /* signoutTableViewCell.swift */; };
+		7D25A283266C396F009A0100 /* QNATableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D25A282266C396F009A0100 /* QNATableViewController.swift */; };
+		7D5E18CD266C110D0066D624 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5E18CC266C110D0066D624 /* SettingsTableViewController.swift */; };
 		7DCE2DE626692A63002AE016 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCE2DE526692A63002AE016 /* AppDelegate.swift */; };
 		7DCE2DE826692A63002AE016 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCE2DE726692A63002AE016 /* SceneDelegate.swift */; };
 		7DCE2DEA26692A63002AE016 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCE2DE926692A63002AE016 /* ViewController.swift */; };
@@ -41,6 +44,9 @@
 /* Begin PBXFileReference section */
 		4037F9FE9CD8921B9645AFDD /* Pods_ConnecTING_CTING_ConnecTING_CTINGUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ConnecTING_CTING_ConnecTING_CTINGUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A41C9DF2BE81C0E01BFFD9B /* Pods-ConnecTING-CTINGTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConnecTING-CTINGTests.release.xcconfig"; path = "Target Support Files/Pods-ConnecTING-CTINGTests/Pods-ConnecTING-CTINGTests.release.xcconfig"; sourceTree = "<group>"; };
+		7D25A280266C3760009A0100 /* signoutTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = signoutTableViewCell.swift; sourceTree = "<group>"; };
+		7D25A282266C396F009A0100 /* QNATableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QNATableViewController.swift; sourceTree = "<group>"; };
+		7D5E18CC266C110D0066D624 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		7DCE2DE226692A63002AE016 /* ConnecTING-CTING.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ConnecTING-CTING.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DCE2DE526692A63002AE016 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7DCE2DE726692A63002AE016 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -122,6 +128,9 @@
 				7DCE2DE726692A63002AE016 /* SceneDelegate.swift */,
 				7DCE2DE926692A63002AE016 /* ViewController.swift */,
 				7DCE2DEB26692A63002AE016 /* Main.storyboard */,
+				7D25A282266C396F009A0100 /* QNATableViewController.swift */,
+				7D25A280266C3760009A0100 /* signoutTableViewCell.swift */,
+				7D5E18CC266C110D0066D624 /* SettingsTableViewController.swift */,
 				7DF82C9A2669330E00DF3405 /* RegisterViewController.swift */,
 				7DCE2DEE26692A66002AE016 /* Assets.xcassets */,
 				7DCE2DF026692A66002AE016 /* LaunchScreen.storyboard */,
@@ -168,7 +177,6 @@
 				99FE035ED627C2F2AFA09E7B /* Pods-ConnecTING-CTINGTests.debug.xcconfig */,
 				4A41C9DF2BE81C0E01BFFD9B /* Pods-ConnecTING-CTINGTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -429,9 +437,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				7DCE2DEA26692A63002AE016 /* ViewController.swift in Sources */,
+				7D5E18CD266C110D0066D624 /* SettingsTableViewController.swift in Sources */,
 				7DCE2DE626692A63002AE016 /* AppDelegate.swift in Sources */,
 				7DCE2DE826692A63002AE016 /* SceneDelegate.swift in Sources */,
 				7DF82C9B2669330E00DF3405 /* RegisterViewController.swift in Sources */,
+				7D25A281266C3760009A0100 /* signoutTableViewCell.swift in Sources */,
+				7D25A283266C396F009A0100 /* QNATableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

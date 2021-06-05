@@ -24,20 +24,37 @@ class ViewController: UIViewController {
     @IBAction func login(_ sender: Any) {
         PFUser.logInWithUsername(inBackground: self.usernameTextField.text!, password: self.passwordTextField.text!) {
           (user: PFUser?, error: Error?) -> Void in
+            self.loginIndicator.startAnimating()
           if user != nil {
-            self.displayAlert(withTitle: "Login Successful", message: "")
+            self.loginIndicator.stopAnimating()
+            self.loginSuccefully()
           } else {
             self.displayAlert(withTitle: "Error", message: error!.localizedDescription)
+            self.loginIndicator.stopAnimating()
           }
         }
     }
     
+    func loginSuccefully(){
+        let alert = UIAlertController(title: "Succesfully login", message: "", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "Ok", style: .default, handler: {action in self.login()})
+        alert.addAction(okAction)
+        self.present(alert, animated: true)
+        
+    }
+    
+    func login(){
+        self.dismiss(animated: true, completion: nil)
+        self.performSegue(withIdentifier: "logintomenuSegue", sender: Any?.self)
+    }
+    
     func displayAlert(withTitle title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "Ok", style: .default, handler: {action in self.performSegue(withIdentifier: "loginSegue", sender: Any?.self)})
+        let okAction = UIAlertAction(title: "Ok", style: .default, handler: {action in self.dismiss(animated: true, completion: nil)})
         alert.addAction(okAction)
         self.present(alert, animated: true)
     }
+    
     
     @IBAction func register(_ sender: Any) {
         performSegue(withIdentifier: "registerSegue", sender: Any?(nilLiteral: ()))
