@@ -18,7 +18,17 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
- 
+    override func viewDidAppear(_ animated: Bool) {
+        
+        // allowing user to stay logged in
+        var currentUser = PFUser.current()
+        if currentUser != nil {
+            self.performSegue(withIdentifier: "logintomenuSegue", sender: Any?.self)
+        } else {
+          // Show the signup or login screen
+        }
+        
+    }
     
     
     @IBAction func login(_ sender: Any) {

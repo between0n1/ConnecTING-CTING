@@ -45,6 +45,7 @@ class SettingsTableViewController: UITableViewController {
     
     func logout(){
         PFUser.logOut()
+//        var currentUser = PFUser.current() should be global?
         self.performSegue(withIdentifier: "logoutSegue", sender: Any?.self)
     }
     

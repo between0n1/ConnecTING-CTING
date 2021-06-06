@@ -6,23 +6,39 @@
 //
 
 import UIKit
+import Parse
 
 class QNATableViewController: UITableViewController {
-
+    
+    var posts = [PFObject]()
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+//        
+//        let query = PFQuery(className:"posts")
+//        query.getObjectInBackground(withId: "xWMyZEGZ") { (gameScore, error) in
+//            if error == nil {
+//                // Success!
+//            } else {
+//                // Fail!
+//            }
+//        }
+        
+        
+    }
 
     @IBAction func questionButton(_ sender: Any) {
         self.performSegue(withIdentifier: "questionSegue", sender: Any?.self)
     }
-    // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
@@ -34,15 +50,16 @@ class QNATableViewController: UITableViewController {
         return 0
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "QNATableViewCell", for: indexPath)
 
-        // Configure the cell...
 
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.
