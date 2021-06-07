@@ -10,3 +10,5 @@ cting that allows people share ideas --
 June 5
 
   - user can logout
+  - user can stay logged in 
+  - user can post questions
