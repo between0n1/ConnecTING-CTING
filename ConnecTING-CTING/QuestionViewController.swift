@@ -26,6 +26,7 @@ class QuestionViewController: UIViewController, UITextViewDelegate {
     }
     
     
+    
     @IBAction func post(_ sender: Any) {
         let post = PFObject(className: "posts")
         post["author"] = PFUser.current()
@@ -38,6 +39,10 @@ class QuestionViewController: UIViewController, UITextViewDelegate {
                 self.displayAlert(withTitle: "Failed to post", message: error!.localizedDescription, success: false)
             }
         }
+    }
+    
+    @IBAction func cancel(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
     }
     
     

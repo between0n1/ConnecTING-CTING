@@ -11,8 +11,16 @@ import Parse
 class QNATableViewController: UITableViewController {
     
     var posts = [PFObject]()
+    
+    @IBOutlet weak var navigationbar: UINavigationBar!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.delegate = self
+        tableView.dataSource = self
+        
 
         
         // Uncomment the following line to preserve selection between presentations
@@ -23,17 +31,17 @@ class QNATableViewController: UITableViewController {
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-//        
-//        let query = PFQuery(className:"posts")
-//        query.getObjectInBackground(withId: "xWMyZEGZ") { (gameScore, error) in
-//            if error == nil {
-//                // Success!
-//            } else {
-//                // Fail!
-//            }
-//        }
-        
-        
+        let query = PFQuery(className: "posts")
+        query.includeKeys(["author","caption","details"])
+        query.limit = 20
+        query.findObjectsInBackground{ (posts, error)
+            in
+            if posts != nil{
+                self.posts = posts!
+                self.tableView.reloadData()
+                
+            }
+        }
     }
 
     @IBAction func questionButton(_ sender: Any) {
@@ -42,21 +50,28 @@ class QNATableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return posts.count
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        let post = posts[section]
+        return 1
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
+        let post = posts[posts.count - indexPath.section - 1]
+        let captions = post["caption"]
+        let detailss = post["details"]
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "QNATableViewCell", for: indexPath)
-
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "QNATableViewCell") as! QNATableViewCell
+        cell.caption.text = captions as! String
+        cell.details.text = detailss as! String
+        
+        
+        
         return cell
     }
     
