@@ -12,8 +12,8 @@
 		7D25A281266C3760009A0100 /* signoutTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D25A280266C3760009A0100 /* signoutTableViewCell.swift */; };
 		7D25A283266C396F009A0100 /* QNATableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D25A282266C396F009A0100 /* QNATableViewController.swift */; };
 		7D59DDCC266C461F0042C923 /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D59DDCB266C461F0042C923 /* QuestionViewController.swift */; };
-		7D59DDCF266C4D830042C923 /* imageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D59DDCE266C4D830042C923 /* imageCollectionViewCell.swift */; };
 		7D59DDD1266D922E0042C923 /* QNATableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D59DDD0266D922E0042C923 /* QNATableViewCell.swift */; };
+		7D59EFA6266EB5F800D78BFC /* QuestionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D59EFA5266EB5F800D78BFC /* QuestionCollectionViewCell.swift */; };
 		7D5E18CD266C110D0066D624 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5E18CC266C110D0066D624 /* SettingsTableViewController.swift */; };
 		7DCE2DE626692A63002AE016 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCE2DE526692A63002AE016 /* AppDelegate.swift */; };
 		7DCE2DE826692A63002AE016 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCE2DE726692A63002AE016 /* SceneDelegate.swift */; };
@@ -50,8 +50,8 @@
 		7D25A280266C3760009A0100 /* signoutTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = signoutTableViewCell.swift; sourceTree = "<group>"; };
 		7D25A282266C396F009A0100 /* QNATableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QNATableViewController.swift; sourceTree = "<group>"; };
 		7D59DDCB266C461F0042C923 /* QuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
-		7D59DDCE266C4D830042C923 /* imageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = imageCollectionViewCell.swift; sourceTree = "<group>"; };
 		7D59DDD0266D922E0042C923 /* QNATableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QNATableViewCell.swift; sourceTree = "<group>"; };
+		7D59EFA5266EB5F800D78BFC /* QuestionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = QuestionCollectionViewCell.swift; path = ../QuestionCollectionViewCell.swift; sourceTree = "<group>"; };
 		7D5E18CC266C110D0066D624 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		7DCE2DE226692A63002AE016 /* ConnecTING-CTING.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ConnecTING-CTING.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DCE2DE526692A63002AE016 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -137,7 +137,7 @@
 				7D59DDD0266D922E0042C923 /* QNATableViewCell.swift */,
 				7D25A282266C396F009A0100 /* QNATableViewController.swift */,
 				7D25A280266C3760009A0100 /* signoutTableViewCell.swift */,
-				7D59DDCE266C4D830042C923 /* imageCollectionViewCell.swift */,
+				7D59EFA5266EB5F800D78BFC /* QuestionCollectionViewCell.swift */,
 				7D59DDCB266C461F0042C923 /* QuestionViewController.swift */,
 				7D5E18CC266C110D0066D624 /* SettingsTableViewController.swift */,
 				7DF82C9A2669330E00DF3405 /* RegisterViewController.swift */,
@@ -445,10 +445,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D59EFA6266EB5F800D78BFC /* QuestionCollectionViewCell.swift in Sources */,
 				7D59DDD1266D922E0042C923 /* QNATableViewCell.swift in Sources */,
 				7DCE2DEA26692A63002AE016 /* ViewController.swift in Sources */,
 				7D5E18CD266C110D0066D624 /* SettingsTableViewController.swift in Sources */,
-				7D59DDCF266C4D830042C923 /* imageCollectionViewCell.swift in Sources */,
 				7DCE2DE626692A63002AE016 /* AppDelegate.swift in Sources */,
 				7DCE2DE826692A63002AE016 /* SceneDelegate.swift in Sources */,
 				7DF82C9B2669330E00DF3405 /* RegisterViewController.swift in Sources */,
