@@ -8,16 +8,24 @@
 import UIKit
 import Parse
 
-class QNATableViewController: UITableViewController {
+
+class QNATableViewController: UITableViewController{
+
+
     var posts = [PFObject]()
+
     
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-        tableView.delegate = self
-        tableView.dataSource = self
         
-
+        super.viewDidLoad()
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
+        tableView.rowHeight = 362
+        let screen = UIScreen.main.bounds
+        let screenWidth = screen.size.width
+        let screenHeight = screen.size.height
+        
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -28,7 +36,7 @@ class QNATableViewController: UITableViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         let query = PFQuery(className: "posts")
-        query.includeKeys(["author","caption","details"])
+        query.includeKeys(["author","caption","details","images"])
         query.limit = 20
         query.findObjectsInBackground{ (post, error)
             in
@@ -38,6 +46,8 @@ class QNATableViewController: UITableViewController {
             }
         }
     }
+    
+    
 
     @IBAction func questionButton(_ sender: Any) {
         self.performSegue(withIdentifier: "questionSegue", sender: Any?.self)
@@ -60,9 +70,13 @@ class QNATableViewController: UITableViewController {
         let post = posts[posts.count - indexPath.section - 1]
         let captions = post["caption"]
         let detailss = post["details"]
-        let cell = tableView.dequeueReusableCell(withIdentifier: "QNATableViewCellID") as! QNATableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "QNATableViewCell") as! QNATableViewCell
         cell.caption.text = (captions as! String)
         cell.details.text = (detailss as! String)
+        cell.post = post;
+        let post_forcolelctionview = post.object(forKey: "images") as! NSArray
+        cell.numofImages = post_forcolelctionview.count
+        
         return cell
     }
     

@@ -22,6 +22,7 @@ class QuestionViewController: UIViewController, UITextViewDelegate, UIImagePicke
     @IBOutlet weak var subjectTextField: UITextField!
     @IBOutlet weak var detailsTextView: UITextView!
     var currenttag = -1;
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         detailsTextView.textColor = .lightGray
@@ -50,7 +51,6 @@ class QuestionViewController: UIViewController, UITextViewDelegate, UIImagePicke
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "QuestionCollectionViewCell", for: indexPath) as! QuestionCollectionViewCell
         cell.addImageButton.tag = indexPath.section + 10
-        print(indexPath.item)
         return cell
     }
     
@@ -98,21 +98,20 @@ class QuestionViewController: UIViewController, UITextViewDelegate, UIImagePicke
         post["author"] = PFUser.current()
         post["caption"] = subjectTextField.text
         post["details"] = detailsTextView.text
-        var images = [PFFileObject?](repeating: nil, count: 6)
-        var index = 0;
+        var images = [PFFileObject?]()
+        
         for i in 10...19{
+            
             let tempButton = self.view.viewWithTag(i) as? UIButton
             let imageData = tempButton?.imageView!.image
             if (imageData != nil){
                 let image = imageData?.pngData()
                 let file = PFFileObject(data: image!)
-                images[index] = file!;
-                index = index + 1;
+                images.append(file!)
             }
             else{}
         }
-        post["images"] = images
-
+        post.setObject(images, forKey: "images")
         post.saveInBackground { (succeeded, error)  in
             if (succeeded) {
                 self.displayAlert(withTitle: "Succefully posted!", message: "Succefully posted!", success: true)

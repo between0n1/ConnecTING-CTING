@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0B6A3F52A8E0ADBF1CB5F77E /* Pods_ConnecTING_CTING_ConnecTING_CTINGUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4037F9FE9CD8921B9645AFDD /* Pods_ConnecTING_CTING_ConnecTING_CTINGUITests.framework */; };
 		181DE5B14D1F441B474CE41E /* Pods_ConnecTING_CTINGTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1E891D13C9F31151E59C1E8 /* Pods_ConnecTING_CTINGTests.framework */; };
+		7D24672E266FB26100D71C04 /* QNACollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D24672D266FB26100D71C04 /* QNACollectionViewCell.swift */; };
 		7D25A281266C3760009A0100 /* signoutTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D25A280266C3760009A0100 /* signoutTableViewCell.swift */; };
 		7D25A283266C396F009A0100 /* QNATableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D25A282266C396F009A0100 /* QNATableViewController.swift */; };
 		7D59DDCC266C461F0042C923 /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D59DDCB266C461F0042C923 /* QuestionViewController.swift */; };
@@ -47,6 +48,7 @@
 /* Begin PBXFileReference section */
 		4037F9FE9CD8921B9645AFDD /* Pods_ConnecTING_CTING_ConnecTING_CTINGUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ConnecTING_CTING_ConnecTING_CTINGUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A41C9DF2BE81C0E01BFFD9B /* Pods-ConnecTING-CTINGTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConnecTING-CTINGTests.release.xcconfig"; path = "Target Support Files/Pods-ConnecTING-CTINGTests/Pods-ConnecTING-CTINGTests.release.xcconfig"; sourceTree = "<group>"; };
+		7D24672D266FB26100D71C04 /* QNACollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QNACollectionViewCell.swift; sourceTree = "<group>"; };
 		7D25A280266C3760009A0100 /* signoutTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = signoutTableViewCell.swift; sourceTree = "<group>"; };
 		7D25A282266C396F009A0100 /* QNATableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QNATableViewController.swift; sourceTree = "<group>"; };
 		7D59DDCB266C461F0042C923 /* QuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 				7DCE2DE726692A63002AE016 /* SceneDelegate.swift */,
 				7DCE2DE926692A63002AE016 /* ViewController.swift */,
 				7DCE2DEB26692A63002AE016 /* Main.storyboard */,
+				7D24672D266FB26100D71C04 /* QNACollectionViewCell.swift */,
 				7D59DDD0266D922E0042C923 /* QNATableViewCell.swift */,
 				7D25A282266C396F009A0100 /* QNATableViewController.swift */,
 				7D25A280266C3760009A0100 /* signoutTableViewCell.swift */,
@@ -446,6 +449,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7D59EFA6266EB5F800D78BFC /* QuestionCollectionViewCell.swift in Sources */,
+				7D24672E266FB26100D71C04 /* QNACollectionViewCell.swift in Sources */,
 				7D59DDD1266D922E0042C923 /* QNATableViewCell.swift in Sources */,
 				7DCE2DEA26692A63002AE016 /* ViewController.swift in Sources */,
 				7D5E18CD266C110D0066D624 /* SettingsTableViewController.swift in Sources */,
