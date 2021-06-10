@@ -83,7 +83,7 @@
                                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" restorationIdentifier="QNAImageView" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="QMn-6y-yZh">
                                             <rect key="frame" x="12" y="11" width="387" height="201"/>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                            <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="8az-ts-IHo">
+                                            <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="8az-ts-IHo">
                                                 <size key="itemSize" width="202" height="195"/>
                                                 <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                 <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -97,15 +97,15 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="202" height="195"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <subviews>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TD9-if-Q5E">
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TD9-if-Q5E">
                                                                 <rect key="frame" x="0.0" y="-3" width="202" height="195"/>
                                                             </imageView>
                                                         </subviews>
                                                         <constraints>
-                                                            <constraint firstItem="TD9-if-Q5E" firstAttribute="top" secondItem="cJ1-BI-YBi" secondAttribute="top" id="C3t-B0-Yjn"/>
-                                                            <constraint firstAttribute="bottom" secondItem="TD9-if-Q5E" secondAttribute="bottom" id="Dn3-8N-UbI"/>
-                                                            <constraint firstItem="TD9-if-Q5E" firstAttribute="leading" secondItem="cJ1-BI-YBi" secondAttribute="leading" id="RkZ-O7-U1r"/>
-                                                            <constraint firstAttribute="trailing" secondItem="TD9-if-Q5E" secondAttribute="trailing" id="TYx-TX-sAv"/>
+                                                            <constraint firstAttribute="bottom" secondItem="TD9-if-Q5E" secondAttribute="bottom" constant="3" id="15e-3F-adU"/>
+                                                            <constraint firstAttribute="trailing" secondItem="TD9-if-Q5E" secondAttribute="trailing" id="FXk-Y0-0Pm"/>
+                                                            <constraint firstItem="TD9-if-Q5E" firstAttribute="top" secondItem="cJ1-BI-YBi" secondAttribute="top" constant="-3" id="Vgv-Ds-3Cq"/>
+                                                            <constraint firstItem="TD9-if-Q5E" firstAttribute="leading" secondItem="cJ1-BI-YBi" secondAttribute="leading" id="m03-Vj-01Y"/>
                                                         </constraints>
                                                     </collectionViewCellContentView>
                                                     <size key="customSize" width="202" height="195"/>
@@ -127,28 +127,28 @@
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="bfJ-z8-qTx" firstAttribute="leading" secondItem="oi6-n6-yda" secondAttribute="leadingMargin" constant="-15" id="17I-cK-Ou2"/>
-                                        <constraint firstItem="p6w-US-kYj" firstAttribute="top" secondItem="uTD-pr-Hr2" secondAttribute="bottom" constant="9" id="2ZD-Ym-4N8"/>
-                                        <constraint firstItem="QMn-6y-yZh" firstAttribute="leading" secondItem="oi6-n6-yda" secondAttribute="leadingMargin" constant="-8" id="66n-Rq-OPw"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="HAT-63-YA8" secondAttribute="bottom" constant="-5" id="7oH-WW-j7K"/>
-                                        <constraint firstItem="LBh-Xc-5YE" firstAttribute="top" secondItem="p6w-US-kYj" secondAttribute="bottom" constant="2" id="BKu-My-tPp"/>
-                                        <constraint firstItem="HAT-63-YA8" firstAttribute="baseline" secondItem="LBh-Xc-5YE" secondAttribute="baseline" id="Baa-mU-JiH"/>
-                                        <constraint firstItem="uTD-pr-Hr2" firstAttribute="top" secondItem="3Ro-5E-GDv" secondAttribute="bottom" constant="13.5" id="Cum-cK-x43"/>
-                                        <constraint firstItem="QMn-6y-yZh" firstAttribute="top" secondItem="oi6-n6-yda" secondAttribute="topMargin" id="H8Y-NN-wsw"/>
-                                        <constraint firstItem="p6w-US-kYj" firstAttribute="top" secondItem="bfJ-z8-qTx" secondAttribute="bottom" constant="61" id="HD4-ip-Oun"/>
-                                        <constraint firstItem="bfJ-z8-qTx" firstAttribute="centerX" secondItem="oi6-n6-yda" secondAttribute="centerX" id="HHN-AD-YQ5"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="QMn-6y-yZh" secondAttribute="trailing" constant="-5" id="LOc-CG-xd6"/>
-                                        <constraint firstItem="HAT-63-YA8" firstAttribute="top" secondItem="wSg-0L-oAK" secondAttribute="bottom" constant="5" id="Lfm-2l-GCi"/>
-                                        <constraint firstItem="bfJ-z8-qTx" firstAttribute="trailing" secondItem="uTD-pr-Hr2" secondAttribute="trailing" id="M5c-Tc-pEI"/>
-                                        <constraint firstItem="3Ro-5E-GDv" firstAttribute="trailing" secondItem="bfJ-z8-qTx" secondAttribute="trailing" id="Qm4-T1-PD4"/>
-                                        <constraint firstItem="LBh-Xc-5YE" firstAttribute="trailing" secondItem="oi6-n6-yda" secondAttribute="trailingMargin" id="as4-JB-QNg"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="p6w-US-kYj" secondAttribute="trailing" constant="20" id="hgm-19-811"/>
-                                        <constraint firstItem="LBh-Xc-5YE" firstAttribute="leading" secondItem="HAT-63-YA8" secondAttribute="trailing" constant="5" id="j5R-HG-6Ub"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="LBh-Xc-5YE" secondAttribute="bottom" constant="-6" id="lJB-yC-Xe0"/>
-                                        <constraint firstItem="p6w-US-kYj" firstAttribute="leading" secondItem="wSg-0L-oAK" secondAttribute="trailing" constant="5" id="lSh-AF-5d3"/>
-                                        <constraint firstItem="bfJ-z8-qTx" firstAttribute="leading" secondItem="uTD-pr-Hr2" secondAttribute="leading" id="oYm-wv-L3D"/>
-                                        <constraint firstItem="3Ro-5E-GDv" firstAttribute="top" secondItem="QMn-6y-yZh" secondAttribute="bottom" constant="8" symbolic="YES" id="ulw-B1-AgA"/>
-                                        <constraint firstItem="bfJ-z8-qTx" firstAttribute="top" secondItem="QMn-6y-yZh" secondAttribute="bottom" constant="14" id="y1k-iy-mqo"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="p6w-US-kYj" secondAttribute="trailing" constant="20" id="0Ix-gV-qK4"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="QMn-6y-yZh" secondAttribute="trailing" constant="-5" id="0NS-LJ-HPX"/>
+                                        <constraint firstItem="p6w-US-kYj" firstAttribute="leading" secondItem="wSg-0L-oAK" secondAttribute="trailing" constant="5" id="65c-yI-2tU"/>
+                                        <constraint firstItem="HAT-63-YA8" firstAttribute="top" secondItem="wSg-0L-oAK" secondAttribute="bottom" constant="5" id="AmV-10-XM5"/>
+                                        <constraint firstItem="QMn-6y-yZh" firstAttribute="top" secondItem="oi6-n6-yda" secondAttribute="topMargin" id="F47-UW-b8L"/>
+                                        <constraint firstItem="3Ro-5E-GDv" firstAttribute="trailing" secondItem="bfJ-z8-qTx" secondAttribute="trailing" id="Gz0-TD-T68"/>
+                                        <constraint firstItem="3Ro-5E-GDv" firstAttribute="top" secondItem="QMn-6y-yZh" secondAttribute="bottom" constant="8" symbolic="YES" id="Ial-vA-mlo"/>
+                                        <constraint firstItem="bfJ-z8-qTx" firstAttribute="top" secondItem="QMn-6y-yZh" secondAttribute="bottom" constant="14" id="Odd-z3-ErL"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="HAT-63-YA8" secondAttribute="bottom" constant="-5" id="SeR-I6-iJ3"/>
+                                        <constraint firstItem="LBh-Xc-5YE" firstAttribute="top" secondItem="p6w-US-kYj" secondAttribute="bottom" constant="2" id="Si5-6B-Eso"/>
+                                        <constraint firstItem="LBh-Xc-5YE" firstAttribute="trailing" secondItem="oi6-n6-yda" secondAttribute="trailingMargin" id="TzL-Ly-upb"/>
+                                        <constraint firstItem="uTD-pr-Hr2" firstAttribute="top" secondItem="3Ro-5E-GDv" secondAttribute="bottom" constant="13.5" id="XL0-qN-5WK"/>
+                                        <constraint firstItem="bfJ-z8-qTx" firstAttribute="leading" secondItem="uTD-pr-Hr2" secondAttribute="leading" id="Ycx-oQ-dej"/>
+                                        <constraint firstItem="bfJ-z8-qTx" firstAttribute="centerX" secondItem="oi6-n6-yda" secondAttribute="centerX" id="cFx-mM-AQ9"/>
+                                        <constraint firstItem="p6w-US-kYj" firstAttribute="top" secondItem="bfJ-z8-qTx" secondAttribute="bottom" constant="61" id="cyv-dr-K8Q"/>
+                                        <constraint firstItem="LBh-Xc-5YE" firstAttribute="leading" secondItem="HAT-63-YA8" secondAttribute="trailing" constant="5" id="fiL-FD-HAF"/>
+                                        <constraint firstItem="HAT-63-YA8" firstAttribute="baseline" secondItem="LBh-Xc-5YE" secondAttribute="baseline" id="iRS-Zj-oSW"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="LBh-Xc-5YE" secondAttribute="bottom" constant="-6" id="jZV-Cu-wxd"/>
+                                        <constraint firstItem="QMn-6y-yZh" firstAttribute="leading" secondItem="oi6-n6-yda" secondAttribute="leadingMargin" constant="-8" id="nnC-7H-Acp"/>
+                                        <constraint firstItem="p6w-US-kYj" firstAttribute="top" secondItem="uTD-pr-Hr2" secondAttribute="bottom" constant="9" id="sRS-Zd-Oh6"/>
+                                        <constraint firstItem="bfJ-z8-qTx" firstAttribute="trailing" secondItem="uTD-pr-Hr2" secondAttribute="trailing" id="uwK-Uu-hAe"/>
+                                        <constraint firstItem="bfJ-z8-qTx" firstAttribute="leading" secondItem="oi6-n6-yda" secondAttribute="leadingMargin" constant="-15" id="xFw-bK-VaJ"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -184,16 +184,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Subject" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1Qc-2Y-6UY">
+                            <textField opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Subject" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1Qc-2Y-6UY">
                                 <rect key="frame" x="20" y="109" width="374" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="dDY-CA-2Zq"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" tag="1" contentMode="scaleToFill" fixedFrame="YES" keyboardDismissMode="onDrag" text="Details / Context" translatesAutoresizingMaskIntoConstraints="NO" id="bDH-yR-USY">
-                                <rect key="frame" x="20" y="162" width="374" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" tag="1" contentMode="scaleToFill" keyboardDismissMode="onDrag" text="Details / Context" translatesAutoresizingMaskIntoConstraints="NO" id="bDH-yR-USY">
+                                <rect key="frame" x="20" y="162" width="374" height="159"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="159" id="dlh-rL-DOx"/>
+                                </constraints>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -201,62 +206,167 @@
                                     <outlet property="delegate" destination="ZfC-N6-ecy" id="iuU-oP-hOc"/>
                                 </connections>
                             </textView>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="lez-8A-OXQ">
-                                <rect key="frame" x="20" y="394" width="374" height="311"/>
+                            <view tag="101" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="i9b-66-LkG" customClass="QuestionImageView" customModule="ConnecTING_CTING" customModuleProvider="target">
+                                <rect key="frame" x="218" y="337" width="175" height="175"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="gBC-Lg-Agb">
-                                    <size key="itemSize" width="128" height="128"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="QuestionCollectionViewCell" id="IVe-dz-wpM" customClass="QuestionCollectionViewCell" customModule="ConnecTING_CTING" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="6.5" width="294" height="298"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D4n-7L-6kX">
+                                        <rect key="frame" x="0.0" y="0.0" width="175" height="175"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="VbU-x9-FUc">
-                                            <rect key="frame" x="0.0" y="0.0" width="294" height="298"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="button1" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ptx-iy-U5L">
-                                                    <rect key="frame" x="17" y="13" width="260" height="273"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <color key="backgroundColor" red="0.0" green="0.65160274510000005" blue="0.93927985430000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
-                                                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <state key="normal" title="Click here to add Image">
-                                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    </state>
-                                                    <connections>
-                                                        <action selector="addMainbImage:" destination="ZfC-N6-ecy" eventType="touchUpInside" id="A42-YQ-AxR"/>
-                                                    </connections>
-                                                </button>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9LZ-zB-RgM">
-                                                    <rect key="frame" x="258" y="9" width="36" height="32"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" backgroundImage="xmark.octagon.fill" catalog="system"/>
-                                                    <connections>
-                                                        <action selector="deleteImage:" destination="ZfC-N6-ecy" eventType="touchUpInside" id="1hL-jb-Ggc"/>
-                                                    </connections>
-                                                </button>
-                                            </subviews>
-                                        </collectionViewCellContentView>
-                                        <size key="customSize" width="294" height="298"/>
+                                        <state key="normal" image="arrow.up.bin.fill" catalog="system">
+                                            <color key="titleColor" systemColor="systemPinkColor"/>
+                                        </state>
                                         <connections>
-                                            <outlet property="addImageButton" destination="Ptx-iy-U5L" id="avx-oe-SJr"/>
-                                            <outlet property="deleteImageButton" destination="9LZ-zB-RgM" id="g9V-RO-kfM"/>
+                                            <action selector="ImageButton:" destination="JJ6-52-0tF" eventType="touchUpInside" id="EeX-cq-DIT"/>
+                                            <action selector="addImage:" destination="ZfC-N6-ecy" eventType="touchUpInside" id="aap-iT-qhu"/>
                                         </connections>
-                                    </collectionViewCell>
-                                </cells>
-                                <connections>
-                                    <outlet property="dataSource" destination="ZfC-N6-ecy" id="29d-7c-3GH"/>
-                                    <outlet property="delegate" destination="ZfC-N6-ecy" id="Z7b-zj-Wz4"/>
-                                </connections>
-                            </collectionView>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l2K-By-WlJ">
+                                        <rect key="frame" x="147" y="-5" width="30" height="31"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="xmark.octagon.fill" catalog="system"/>
+                                        <connections>
+                                            <action selector="deleteImage:" destination="ZfC-N6-ecy" eventType="touchUpInside" id="J06-Vx-un1"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </view>
+                            <view tag="100" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sSW-MR-kx5" customClass="QuestionImageView" customModule="ConnecTING_CTING" customModuleProvider="target">
+                                <rect key="frame" x="24" y="337" width="175" height="175"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hyp-Bs-ytZ">
+                                        <rect key="frame" x="0.0" y="0.0" width="175" height="175"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="arrow.up.bin.fill" catalog="system">
+                                            <color key="titleColor" systemColor="systemPinkColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="ImageButton:" destination="JJ6-52-0tF" eventType="touchUpInside" id="yHt-wf-FZB"/>
+                                            <action selector="addImage:" destination="ZfC-N6-ecy" eventType="touchUpInside" id="0R5-Nh-YiQ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B9N-sA-Lty">
+                                        <rect key="frame" x="147" y="-5" width="30" height="31"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="xmark.octagon.fill" catalog="system"/>
+                                        <connections>
+                                            <action selector="deleteImage:" destination="ZfC-N6-ecy" eventType="touchUpInside" id="ant-w9-RdP"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </view>
+                            <view tag="102" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5RY-WC-vNF" customClass="QuestionImageView" customModule="ConnecTING_CTING" customModuleProvider="target">
+                                <rect key="frame" x="24" y="520" width="175" height="175"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Ie-80-pio">
+                                        <rect key="frame" x="0.0" y="0.0" width="175" height="175"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="arrow.up.bin.fill" catalog="system">
+                                            <color key="titleColor" systemColor="systemPinkColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="ImageButton:" destination="JJ6-52-0tF" eventType="touchUpInside" id="m9B-cB-fw6"/>
+                                            <action selector="addImage:" destination="ZfC-N6-ecy" eventType="touchUpInside" id="IIO-hj-mJg"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6ha-vp-yC6">
+                                        <rect key="frame" x="147" y="-5" width="30" height="31"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="xmark.octagon.fill" catalog="system"/>
+                                        <connections>
+                                            <action selector="deleteImage:" destination="ZfC-N6-ecy" eventType="touchUpInside" id="NAO-G0-OiJ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </view>
+                            <view tag="103" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="79h-5f-itT" customClass="QuestionImageView" customModule="ConnecTING_CTING" customModuleProvider="target">
+                                <rect key="frame" x="219" y="520" width="175" height="175"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Oy-zx-0yv">
+                                        <rect key="frame" x="0.0" y="0.0" width="175" height="175"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="arrow.up.bin.fill" catalog="system">
+                                            <color key="titleColor" systemColor="systemPinkColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="ImageButton:" destination="JJ6-52-0tF" eventType="touchUpInside" id="yyf-Mf-e3V"/>
+                                            <action selector="addImage:" destination="ZfC-N6-ecy" eventType="touchUpInside" id="Qko-wk-Oz3"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="56A-QR-eMK">
+                                        <rect key="frame" x="147" y="-5" width="30" height="31"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="xmark.octagon.fill" catalog="system"/>
+                                        <connections>
+                                            <action selector="deleteImage:" destination="ZfC-N6-ecy" eventType="touchUpInside" id="pOI-Mf-ydk"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </view>
+                            <view tag="104" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jXr-o2-qbW" customClass="QuestionImageView" customModule="ConnecTING_CTING" customModuleProvider="target">
+                                <rect key="frame" x="24" y="712" width="175" height="175"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0LB-5b-gJ3">
+                                        <rect key="frame" x="0.0" y="0.0" width="175" height="175"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="arrow.up.bin.fill" catalog="system">
+                                            <color key="titleColor" systemColor="systemPinkColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="ImageButton:" destination="JJ6-52-0tF" eventType="touchUpInside" id="Qwv-Dp-eHv"/>
+                                            <action selector="addImage:" destination="ZfC-N6-ecy" eventType="touchUpInside" id="0jh-bV-exV"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8FA-o5-rpO">
+                                        <rect key="frame" x="147" y="-5" width="30" height="31"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="xmark.octagon.fill" catalog="system"/>
+                                        <connections>
+                                            <action selector="deleteImage:" destination="ZfC-N6-ecy" eventType="touchUpInside" id="XhX-5h-31B"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </view>
+                            <view tag="105" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ggk-Vm-bvJ" customClass="QuestionImageView" customModule="ConnecTING_CTING" customModuleProvider="target">
+                                <rect key="frame" x="218" y="712" width="175" height="175"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UuN-KE-EiK">
+                                        <rect key="frame" x="0.0" y="0.0" width="175" height="175"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="arrow.up.bin.fill" catalog="system">
+                                            <color key="titleColor" systemColor="systemPinkColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="ImageButton:" destination="JJ6-52-0tF" eventType="touchUpInside" id="YRj-X9-Yjs"/>
+                                            <action selector="addImage:" destination="ZfC-N6-ecy" eventType="touchUpInside" id="neA-kF-9Rd"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VnN-OR-fls">
+                                        <rect key="frame" x="147" y="-5" width="30" height="31"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="xmark.octagon.fill" catalog="system"/>
+                                        <connections>
+                                            <action selector="deleteImage:" destination="ZfC-N6-ecy" eventType="touchUpInside" id="gl5-XH-FQk"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Yly-MG-427"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="1Qc-2Y-6UY" firstAttribute="top" secondItem="Yly-MG-427" secondAttribute="top" constant="21" id="0Fq-83-Eja"/>
+                            <constraint firstItem="1Qc-2Y-6UY" firstAttribute="leading" secondItem="j0I-uU-GVo" secondAttribute="leadingMargin" id="F6C-K1-IOU"/>
+                            <constraint firstItem="1Qc-2Y-6UY" firstAttribute="trailing" secondItem="j0I-uU-GVo" secondAttribute="trailingMargin" id="OrU-8j-Gvp"/>
+                            <constraint firstItem="1Qc-2Y-6UY" firstAttribute="leading" secondItem="bDH-yR-USY" secondAttribute="leading" id="iM4-tE-tLB"/>
+                            <constraint firstItem="1Qc-2Y-6UY" firstAttribute="trailing" secondItem="bDH-yR-USY" secondAttribute="trailing" id="igN-jJ-uCE"/>
+                            <constraint firstItem="bDH-yR-USY" firstAttribute="top" secondItem="1Qc-2Y-6UY" secondAttribute="bottom" constant="19" id="juK-HT-HBx"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Q17-Ef-MHh">
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="zyC-lY-Jlp">
@@ -271,12 +381,14 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="collectionView" destination="lez-8A-OXQ" id="qnW-f0-cy0"/>
+                        <outlet property="AddImageButton" destination="Hyp-Bs-ytZ" id="vyd-y4-OZd"/>
+                        <outlet property="QuestionImageView" destination="sSW-MR-kx5" id="oyO-VR-G4i"/>
                         <outlet property="detailsTextView" destination="bDH-yR-USY" id="FUN-kq-YiY"/>
                         <outlet property="subjectTextField" destination="1Qc-2Y-6UY" id="lBR-2f-wVM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h0W-vB-Gux" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="JJ6-52-0tF" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="4626.0869565217399" y="691.74107142857144"/>
         </scene>
@@ -630,6 +742,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="arrow.up.bin.fill" catalog="system" width="128" height="93"/>
         <image name="exclamationmark.bubble.fill" catalog="system" width="128" height="110"/>
         <image name="gearshape.fill" catalog="system" width="128" height="121"/>
         <image name="person.fill.questionmark" catalog="system" width="128" height="104"/>
@@ -649,6 +762,9 @@
         </systemColor>
         <systemColor name="systemIndigoColor">
             <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

@@ -14,54 +14,76 @@ import AlamofireImage
  
  */
 
-class QuestionViewController: UIViewController, UITextViewDelegate, UIImagePickerControllerDelegate ,UINavigationControllerDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-    
-    
+//public class Node{
+//    var prev: Node?
+//    var next: Node?
+//    var image:  PFFileObject?
+//    init() {
+//        prev = nil
+//        next = nil
+//        image = nil
+//    }
+//    init(prev: Node, next: Node, image: PFFileObject) {
+//        self.prev = prev
+//        self.next = next
+//        self.image = image
+//    }
+//    init(image: PFFileObject) {
+//        self.image = image
+//    }
+//}
+//
+//public class List{
+//    private var head: Node?
+//    public var isEmpty: Bool{
+//        return head == nil
+//    }
+//    public var first: Node?{
+//        return head
+//    }
+//}
 
-    @IBOutlet weak var collectionView: UICollectionView!
+class QuestionViewController: UIViewController, UITextViewDelegate, UIImagePickerControllerDelegate ,UINavigationControllerDelegate  {
+
+    @IBOutlet weak var QuestionImageView: QuestionImageView!
+    @IBOutlet weak var AddImageButton: UIButton!
     @IBOutlet weak var subjectTextField: UITextField!
     @IBOutlet weak var detailsTextView: UITextView!
-    var currenttag = -1;
+    let MaxImage : Int = 10
+//    var images = Array(repeating: nil, count: 6)
+    let screen_width = UIScreen.main.bounds.width
+    var view_width : CGFloat = 0 // will be valued in viewDidLoad()
+    var current_button = UIButton() // for imagePickerController
     
     override func viewDidLoad() {
         super.viewDidLoad()
         detailsTextView.textColor = .lightGray
         detailsTextView.text = "Type your details / context here..."
-        detailsTextView.isScrollEnabled = false
+        detailsTextView.isScrollEnabled = true
         detailsTextView.autocapitalizationType = .words
         detailsTextView.delegate = self
-        collectionView.dataSource = self
-        collectionView.delegate = self
-        collectionView.numberOfItems(inSection: 1)
-        self.collectionView.reloadData()
+        view_width = screen_width * (0.4088785046728972)
         
-        let width = 294
-        let layout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
-        layout.itemSize = CGSize(width: width, height: width)
-        
-        
-        // Do any additional setup after loading the view.
-        
+        for i in 100...105{ // from 100 to 105 are QuestionImageViews
+            let my_view = view.viewWithTag(i) as! QuestionImageView
+            my_view.layer.borderWidth = 1
+            my_view.layer.borderColor = UIColor.blue.cgColor
+            my_view.layer.cornerRadius = 10
+            my_view.subviews[0].layer.cornerRadius = 10
+            my_view.subviews[0].layer.borderWidth = 1
+            my_view.subviews[0].clipsToBounds = true
+        }
     }
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
+    @IBAction func deleteImage(_ sender: UIButton!) {
+        let imageView = sender.superview as! QuestionImageView
+        let imageButton = sender.superview?.subviews[0] as! UIButton
+        imageButton.setBackgroundImage(nil, for: .normal)
+        imageButton.setImage(UIImage(systemName: "arrow.up.bin.fill"), for: .normal)
+        imageView.Image = nil
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "QuestionCollectionViewCell", for: indexPath) as! QuestionCollectionViewCell
-        cell.addImageButton.tag = indexPath.section + 10
-        return cell
-    }
-    
-    
-    
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 10
-    }
-    
-    @IBAction func addMainbImage(_ sender: UIButton) {
-        currenttag = sender.tag;
+    @IBAction func addImage(_ sender: UIButton!) {
         let picker = UIImagePickerController()
         picker.delegate = self
         picker.allowsEditing = true
@@ -70,26 +92,22 @@ class QuestionViewController: UIViewController, UITextViewDelegate, UIImagePicke
         } else {
             picker.sourceType = .photoLibrary
         }
+        current_button = sender as! UIButton
+
         present(picker, animated: true, completion: nil)
     }
-
-    @IBAction func deleteImage(_ sender: UIButton!) {
-        let cell = sender.superview?.superview as! QuestionCollectionViewCell
-        cell.addImageButton.setImage(nil, for: .normal)
-    }
-    
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
         let image = info[.editedImage] as! UIImage
-        let size = CGSize(width: 294, height: 294  )
+        let size = CGSize(width: view_width, height: view_width)
         let scaledImage = image.af_imageAspectScaled(toFill: size)
-        let tempButton = self.view.viewWithTag(currenttag) as! UIButton
-        tempButton.setImage(scaledImage, for: .normal)        
+        current_button.setBackgroundImage(scaledImage, for: .normal)
+        current_button.setImage(nil, for: .normal)
+        let theView = current_button.superview as! QuestionImageView
+        theView.Image = image; // each View has the data of image before scaled so that the server can receive unscaled image for later use
         dismiss(animated: true, completion: nil)
     }
-    
-    
     
     
     @IBAction func post(_ sender: Any) {
@@ -99,17 +117,14 @@ class QuestionViewController: UIViewController, UITextViewDelegate, UIImagePicke
         post["caption"] = subjectTextField.text
         post["details"] = detailsTextView.text
         var images = [PFFileObject?]()
-        
-        for i in 10...19{
-            
-            let tempButton = self.view.viewWithTag(i) as? UIButton
-            let imageData = tempButton?.imageView!.image
-            if (imageData != nil){
-                let image = imageData?.pngData()
-                let file = PFFileObject(data: image!)
-                images.append(file!)
+        for i in 100...105{
+            let current_view = self.view.viewWithTag(i) as! QuestionImageView
+            if (current_view.Image != nil){
+                let imageData = current_view.Image as! UIImage;
+                let image = imageData.pngData()
+                let imageFile = PFFileObject(data: image!)
+                images.append(imageFile!)
             }
-            else{}
         }
         post.setObject(images, forKey: "images")
         post.saveInBackground { (succeeded, error)  in

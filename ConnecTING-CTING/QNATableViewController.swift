@@ -17,14 +17,11 @@ class QNATableViewController: UITableViewController{
     
     
     override func viewDidLoad() {
-        
         super.viewDidLoad()
         self.tableView.delegate = self
         self.tableView.dataSource = self
         tableView.rowHeight = 362
-        let screen = UIScreen.main.bounds
-        let screenWidth = screen.size.width
-        let screenHeight = screen.size.height
+        self.tableView.reloadData()
         
         
         // Uncomment the following line to preserve selection between presentations
@@ -33,6 +30,9 @@ class QNATableViewController: UITableViewController{
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
+    
+    
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         let query = PFQuery(className: "posts")
@@ -66,7 +66,6 @@ class QNATableViewController: UITableViewController{
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         let post = posts[posts.count - indexPath.section - 1]
         let captions = post["caption"]
         let detailss = post["details"]
@@ -76,7 +75,6 @@ class QNATableViewController: UITableViewController{
         cell.post = post;
         let post_forcolelctionview = post.object(forKey: "images") as! NSArray
         cell.numofImages = post_forcolelctionview.count
-        
         return cell
     }
     

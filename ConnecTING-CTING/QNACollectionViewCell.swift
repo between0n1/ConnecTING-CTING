@@ -13,4 +13,8 @@ class QNACollectionViewCell: UICollectionViewCell {
     var posts = [PFObject]()
     
     @IBOutlet weak var QNAImageView: UIImageView!
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+    }
 }
