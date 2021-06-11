@@ -64,9 +64,6 @@ class QNATableViewCell: UITableViewCell, UICollectionViewDelegate, UICollectionV
             cell.QNAImageView.af_setImage(withURL: url!)
             cell.QNAImageView.frame.size = CGSize(width: 100, height: 100)
             cell.QNAImageView.clipsToBounds = true
-            print(postObject.object(forKey: "caption"), terminator: " ")
-            print(numofImages, terminator: " ")
-            print(image)
         }
         return cell
     }

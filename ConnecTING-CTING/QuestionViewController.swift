@@ -51,9 +51,9 @@ class QuestionViewController: UIViewController, UITextViewDelegate, UIImagePicke
     @IBOutlet weak var detailsTextView: UITextView!
     let MaxImage : Int = 10
 //    var images = Array(repeating: nil, count: 6)
-    let screen_width = UIScreen.main.bounds.width
-    var view_width : CGFloat = 0 // will be valued in viewDidLoad()
     var current_button = UIButton() // for imagePickerController
+    
+    let view_width = (UIScreen.main.bounds.width * 0.4538)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,18 +62,21 @@ class QuestionViewController: UIViewController, UITextViewDelegate, UIImagePicke
         detailsTextView.isScrollEnabled = true
         detailsTextView.autocapitalizationType = .words
         detailsTextView.delegate = self
-        view_width = screen_width * (0.4088785046728972)
-        
         for i in 100...105{ // from 100 to 105 are QuestionImageViews
             let my_view = view.viewWithTag(i) as! QuestionImageView
+            
+            my_view.frame.size.width = view_width
+            my_view.frame.size.height = view_width
             my_view.layer.borderWidth = 1
             my_view.layer.borderColor = UIColor.blue.cgColor
             my_view.layer.cornerRadius = 10
-            my_view.subviews[0].layer.cornerRadius = 10
-            my_view.subviews[0].layer.borderWidth = 1
-            my_view.subviews[0].clipsToBounds = true
+            var imageButton = my_view.subviews[0] as! UIButton
+            imageButton.frame.size = CGSize(width: view_width, height: view_width)
+            imageButton.layer.cornerRadius = 10
+            imageButton.clipsToBounds = true
         }
     }
+
     
     @IBAction func deleteImage(_ sender: UIButton!) {
         let imageView = sender.superview as! QuestionImageView
