@@ -81,10 +81,10 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" restorationIdentifier="QNAImageView" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="QMn-6y-yZh">
-                                            <rect key="frame" x="12" y="11" width="387" height="201"/>
+                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" restorationIdentifier="QNAImageView" contentInsetAdjustmentBehavior="never" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="QMn-6y-yZh">
+                                            <rect key="frame" x="12" y="11" width="397" height="201"/>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                            <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="8az-ts-IHo">
+                                            <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="30" id="8az-ts-IHo">
                                                 <size key="itemSize" width="202" height="195"/>
                                                 <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                 <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -105,6 +105,8 @@
                                                         <constraints>
                                                             <constraint firstAttribute="bottom" secondItem="TD9-if-Q5E" secondAttribute="bottom" constant="3" id="15e-3F-adU"/>
                                                             <constraint firstAttribute="trailing" secondItem="TD9-if-Q5E" secondAttribute="trailing" id="FXk-Y0-0Pm"/>
+                                                            <constraint firstItem="TD9-if-Q5E" firstAttribute="width" secondItem="cJ1-BI-YBi" secondAttribute="width" id="Ip4-as-vnk"/>
+                                                            <constraint firstItem="TD9-if-Q5E" firstAttribute="height" secondItem="cJ1-BI-YBi" secondAttribute="height" id="QAY-tQ-e3Q"/>
                                                             <constraint firstItem="TD9-if-Q5E" firstAttribute="top" secondItem="cJ1-BI-YBi" secondAttribute="top" constant="-3" id="Vgv-Ds-3Cq"/>
                                                             <constraint firstItem="TD9-if-Q5E" firstAttribute="leading" secondItem="cJ1-BI-YBi" secondAttribute="leading" id="m03-Vj-01Y"/>
                                                         </constraints>
@@ -129,7 +131,7 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstAttribute="trailingMargin" secondItem="p6w-US-kYj" secondAttribute="trailing" constant="20" id="0Ix-gV-qK4"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="QMn-6y-yZh" secondAttribute="trailing" constant="-5" id="0NS-LJ-HPX"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="QMn-6y-yZh" secondAttribute="trailing" constant="-15" id="0NS-LJ-HPX"/>
                                         <constraint firstItem="p6w-US-kYj" firstAttribute="leading" secondItem="wSg-0L-oAK" secondAttribute="trailing" constant="5" id="65c-yI-2tU"/>
                                         <constraint firstItem="HAT-63-YA8" firstAttribute="top" secondItem="wSg-0L-oAK" secondAttribute="bottom" constant="5" id="AmV-10-XM5"/>
                                         <constraint firstItem="QMn-6y-yZh" firstAttribute="top" secondItem="oi6-n6-yda" secondAttribute="topMargin" id="F47-UW-b8L"/>

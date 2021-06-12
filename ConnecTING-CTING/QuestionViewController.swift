@@ -14,34 +14,33 @@ import AlamofireImage
  
  */
 
-//public class Node{
-//    var prev: Node?
-//    var next: Node?
-//    var image:  PFFileObject?
-//    init() {
-//        prev = nil
-//        next = nil
-//        image = nil
-//    }
-//    init(prev: Node, next: Node, image: PFFileObject) {
-//        self.prev = prev
-//        self.next = next
-//        self.image = image
-//    }
-//    init(image: PFFileObject) {
-//        self.image = image
-//    }
-//}
-//
-//public class List{
-//    private var head: Node?
-//    public var isEmpty: Bool{
-//        return head == nil
-//    }
-//    public var first: Node?{
-//        return head
-//    }
-//}
+extension UITextView{
+    func addDoneButton(title: String, target: Any, selector: Selector) {
+        
+        let toolBar = UIToolbar(frame: CGRect(x: 0.0,
+                                              y: 0.0,
+                                              width: UIScreen.main.bounds.size.width,
+                                              height: 44.0))//1
+        let flexible = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)//2
+        let barButton = UIBarButtonItem(title: title, style: .plain, target: target, action: selector)//3
+        toolBar.setItems([flexible, barButton], animated: false)//4
+        self.inputAccessoryView = toolBar//5
+    }
+}
+
+extension UITextField{
+    func addDoneButton(title: String, target: Any, selector: Selector) {
+        
+        let toolBar = UIToolbar(frame: CGRect(x: 0.0,
+                                              y: 0.0,
+                                              width: UIScreen.main.bounds.size.width,
+                                              height: 44.0))//1
+        let flexible = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)//2
+        let barButton = UIBarButtonItem(title: title, style: .plain, target: target, action: selector)//3
+        toolBar.setItems([flexible, barButton], animated: false)//4
+        self.inputAccessoryView = toolBar//5
+    }
+}
 
 class QuestionViewController: UIViewController, UITextViewDelegate, UIImagePickerControllerDelegate ,UINavigationControllerDelegate  {
 
@@ -50,10 +49,9 @@ class QuestionViewController: UIViewController, UITextViewDelegate, UIImagePicke
     @IBOutlet weak var subjectTextField: UITextField!
     @IBOutlet weak var detailsTextView: UITextView!
     let MaxImage : Int = 10
-//    var images = Array(repeating: nil, count: 6)
     var current_button = UIButton() // for imagePickerController
-    
     let view_width = (UIScreen.main.bounds.width * 0.4538)
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,6 +60,16 @@ class QuestionViewController: UIViewController, UITextViewDelegate, UIImagePicke
         detailsTextView.isScrollEnabled = true
         detailsTextView.autocapitalizationType = .words
         detailsTextView.delegate = self
+        detailsTextView.addDoneButton(title: "Done", target: self, selector: #selector(tapDone(sender:)))
+        subjectTextField.addDoneButton(title: "Done", target: self, selector: #selector(tapDone(sender:)))
+        setImageViews()
+
+    }
+    @objc func tapDone(sender: Any){
+        self.view.endEditing(true)
+    }
+    
+    func setImageViews(){
         for i in 100...105{ // from 100 to 105 are QuestionImageViews
             let my_view = view.viewWithTag(i) as! QuestionImageView
             
@@ -87,18 +95,60 @@ class QuestionViewController: UIViewController, UITextViewDelegate, UIImagePicke
     }
     
     @IBAction func addImage(_ sender: UIButton!) {
+        current_button = sender as! UIButton
+        
         let picker = UIImagePickerController()
         picker.delegate = self
         picker.allowsEditing = true
-        if UIImagePickerController.isSourceTypeAvailable(.camera){
-            picker.sourceType = .camera
-        } else {
-            picker.sourceType = .photoLibrary
+        
+        
+        var choose = 0
+        
+        var alert = UIAlertController(title: "Choosee Image", message: nil, preferredStyle: .actionSheet)
+        
+        let chooseCamera = UIAlertAction(title: "Camera", style: .default) { UIAlertAction in
+            Camera()
         }
-        current_button = sender as! UIButton
+        
+        let chooseGallary = UIAlertAction(title: "Gallery", style: .default) { UIAlertAction in
+            CameraRoll()
+        }
+        
+        let cancel = UIAlertAction(title: "Cancel", style: .default) { UIAlertAction in alert.dismiss(animated: true, completion: nil)
+        }
+        
+        
+        alert.addAction(chooseCamera)
+        alert.addAction(chooseGallary)
+        alert.addAction(cancel)
 
-        present(picker, animated: true, completion: nil)
+        
+        present(alert,animated: true,completion: nil)
+        
+        
+        func Camera(){
+            if (UIImagePickerController.isSourceTypeAvailable(.camera)){
+                picker.sourceType = .camera
+                alert.dismiss(animated: true, completion: nil)
+                present(picker, animated: true, completion: nil)
+            }
+            else{
+                alert.dismiss(animated: true, completion: nil)
+            }
+        }
+        
+        func CameraRoll(){
+            picker.sourceType = .photoLibrary
+            alert.dismiss(animated: true, completion: nil)
+            present(picker, animated: true, completion: nil)
+        }
+        
+
+        
+        
     }
+    
+    
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         

@@ -14,21 +14,29 @@ class QNATableViewCell: UITableViewCell, UICollectionViewDelegate, UICollectionV
     @IBOutlet weak var QNACollectionView: UICollectionView!
     @IBOutlet weak var caption: UILabel!
     @IBOutlet weak var details: UILabel!
-    let screen_width = UIScreen.main.bounds.width
-    var view_width : CGFloat = 0 // will be valued in viewDidLoad()
+    var view_width : CGFloat = UIScreen.main.bounds.width * (0.6)
     var post : Any? = nil
     var numofImages : Int = 0;
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        view_width = screen_width * (0.4088785946728972)
         self.QNACollectionView.delegate = self
         self.QNACollectionView.dataSource = self
 //        QNACollectionView.register(QNACollectionViewCell.self, forCellWithReuseIdentifier: "QNACollectionViewCell")
-        self.QNACollectionView.automaticallyAdjustsScrollIndicatorInsets = false
-        self.QNACollectionView.contentInsetAdjustmentBehavior = .never
+//        self.QNACollectionView.automaticallyAdjustsScrollIndicatorInsets = false
+//        self.QNACollectionView.contentInsetAdjustmentBehavior = .never
         self.QNACollectionView.reloadData()
     }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 20
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 20
+    }
+    
+    
     func resetCollectionView(){
         guard !(post==nil) else {return}
         post = nil;
@@ -61,8 +69,8 @@ class QNATableViewCell: UITableViewCell, UICollectionViewDelegate, UICollectionV
             let image = images[indexPath[0]] as! PFFileObject
             let imageURL = image.url
             var url = URL(string: imageURL!)
+            cell.frame.size = CGSize(width: view_width, height: view_width)
             cell.QNAImageView.af_setImage(withURL: url!)
-            cell.QNAImageView.frame.size = CGSize(width: 100, height: 100)
             cell.QNAImageView.clipsToBounds = true
         }
         return cell
@@ -73,7 +81,7 @@ class QNATableViewCell: UITableViewCell, UICollectionViewDelegate, UICollectionV
     func collectionView(_ collectionView: UICollectionView,
                           layout collectionViewLayout: UICollectionViewLayout,
                           sizeForItemAt indexPath: IndexPath) -> CGSize{
-        let size = CGSize(width: 100, height: 100)
+        let size = CGSize(width: view_width, height: view_width)
         return size
     }
     func numberOfSections(in collectionView: UICollectionView) -> Int {
