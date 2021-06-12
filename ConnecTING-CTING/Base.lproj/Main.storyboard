@@ -467,7 +467,7 @@
                         <outlet property="AddImageButton" destination="Hyp-Bs-ytZ" id="vyd-y4-OZd"/>
                         <outlet property="QuestionImageView" destination="sSW-MR-kx5" id="oyO-VR-G4i"/>
                         <outlet property="detailsTextView" destination="bDH-yR-USY" id="FUN-kq-YiY"/>
-                        <outlet property="subjectTextField" destination="1Qc-2Y-6UY" id="lBR-2f-wVM"/>
+                        <outlet property="titleTextField" destination="1Qc-2Y-6UY" id="lBR-2f-wVM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h0W-vB-Gux" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

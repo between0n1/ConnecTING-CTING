@@ -46,7 +46,7 @@ class QuestionViewController: UIViewController, UITextViewDelegate, UIImagePicke
 
     @IBOutlet weak var QuestionImageView: QuestionImageView!
     @IBOutlet weak var AddImageButton: UIButton!
-    @IBOutlet weak var subjectTextField: UITextField!
+    @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var detailsTextView: UITextView!
     let MaxImage : Int = 10
     var current_button = UIButton() // for imagePickerController
@@ -56,12 +56,12 @@ class QuestionViewController: UIViewController, UITextViewDelegate, UIImagePicke
     override func viewDidLoad() {
         super.viewDidLoad()
         detailsTextView.textColor = .lightGray
-        detailsTextView.text = "Type your details / context here..."
+        detailsTextView.text = "Description"
         detailsTextView.isScrollEnabled = true
         detailsTextView.autocapitalizationType = .words
         detailsTextView.delegate = self
         detailsTextView.addDoneButton(title: "Done", target: self, selector: #selector(tapDone(sender:)))
-        subjectTextField.addDoneButton(title: "Done", target: self, selector: #selector(tapDone(sender:)))
+        titleTextField.addDoneButton(title: "Done", target: self, selector: #selector(tapDone(sender:)))
         setImageViews()
 
     }
@@ -95,6 +95,7 @@ class QuestionViewController: UIViewController, UITextViewDelegate, UIImagePicke
     }
     
     @IBAction func addImage(_ sender: UIButton!) {
+        
         current_button = sender as! UIButton
         
         let picker = UIImagePickerController()
@@ -102,7 +103,6 @@ class QuestionViewController: UIViewController, UITextViewDelegate, UIImagePicke
         picker.allowsEditing = true
         
         
-        var choose = 0
         
         var alert = UIAlertController(title: "Choosee Image", message: nil, preferredStyle: .actionSheet)
         
@@ -165,27 +165,43 @@ class QuestionViewController: UIViewController, UITextViewDelegate, UIImagePicke
     
     @IBAction func post(_ sender: Any) {
         let post = PFObject(className: "posts")
-        
-        post["author"] = PFUser.current()
-        post["caption"] = subjectTextField.text
-        post["details"] = detailsTextView.text
-        var images = [PFFileObject?]()
-        for i in 100...105{
-            let current_view = self.view.viewWithTag(i) as! QuestionImageView
-            if (current_view.Image != nil){
-                let imageData = current_view.Image as! UIImage;
-                let image = imageData.pngData()
-                let imageFile = PFFileObject(data: image!)
-                images.append(imageFile!)
+        let details = detailsTextView.text
+        let title = titleTextField.text
+        if (title != "" && title != nil){
+            if ( details != nil && details != "Description"){
+                var images = [PFFileObject?]()
+                for i in 100...105{
+                    let current_view = self.view.viewWithTag(i) as! QuestionImageView
+                    if (current_view.Image != nil){
+                        let imageData = current_view.Image as! UIImage;
+                        let image = imageData.pngData()
+                        let imageFile = PFFileObject(data: image!)
+                        images.append(imageFile!)
+                    }
+                }
+                if (images.isEmpty){
+                    displayAlert(withTitle: "No images uploaded", message: "Please upload at least one image", success: false)
+                }
+                else{
+                    post["author"] = PFUser.current()
+                    post["caption"] = title
+                    post["details"] = details
+                    post.setObject(images, forKey: "images")
+                    post.saveInBackground { (succeeded, error)  in
+                        if (succeeded) {
+                            self.displayAlert(withTitle: "Succefully posted!", message: "Succefully posted!", success: true)
+                        } else {
+                            self.displayAlert(withTitle: "Failed to post", message: error!.localizedDescription, success: false)
+                        }
+                    }
+                }
+            }
+            else{
+                displayAlert(withTitle: "No details entered", message: "Please enter details", success: false)
             }
         }
-        post.setObject(images, forKey: "images")
-        post.saveInBackground { (succeeded, error)  in
-            if (succeeded) {
-                self.displayAlert(withTitle: "Succefully posted!", message: "Succefully posted!", success: true)
-            } else {
-                self.displayAlert(withTitle: "Failed to post", message: error!.localizedDescription, success: false)
-            }
+        else{
+            displayAlert(withTitle: "No title entered", message: "Please enter title", success: false)
         }
     }
     
@@ -213,7 +229,7 @@ class QuestionViewController: UIViewController, UITextViewDelegate, UIImagePicke
     func textViewDidEndEditing (_ textView: UITextView) {
         if detailsTextView.text.isEmpty || detailsTextView.text == "" {
             detailsTextView.textColor = .lightGray
-            detailsTextView.text = "Type your thoughts here..."
+            detailsTextView.text = "Description"
         }
     }
     
