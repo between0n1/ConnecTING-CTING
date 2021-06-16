@@ -11,6 +11,7 @@ import AlamofireImage
 
 class QNATableViewCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     
+    @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var curiosityButton: UIButton!
     @IBOutlet weak var curiosityLabel: UILabel!
     @IBOutlet weak var QNACollectionView: UICollectionView!
@@ -28,6 +29,7 @@ class QNATableViewCell: UITableViewCell, UICollectionViewDelegate, UICollectionV
         self.QNACollectionView.dataSource = self
         self.QNACollectionView.contentInsetAdjustmentBehavior = .never
         self.QNACollectionView.reloadData()
+        self.QNACollectionView.bounds.size = CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.width * 0.6)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
@@ -134,7 +136,7 @@ class QNATableViewCell: UITableViewCell, UICollectionViewDelegate, UICollectionV
     func collectionView(_ collectionView: UICollectionView,
                           layout collectionViewLayout: UICollectionViewLayout,
                           sizeForItemAt indexPath: IndexPath) -> CGSize{
-        let width = UIScreen.main.bounds.width * 0.533
+        let width = self.QNACollectionView.bounds.height - self.QNACollectionView.contentInset.top - self.QNACollectionView.contentInset.bottom
         let size = CGSize(width: width, height: width)
         return size
     }

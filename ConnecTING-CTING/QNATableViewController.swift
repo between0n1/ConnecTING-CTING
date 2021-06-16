@@ -40,7 +40,7 @@ class QNATableViewController: UITableViewController{
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         let query = PFQuery(className: "posts")
-        query.includeKeys(["author","caption","details","images","curiosity"])
+        query.includeKeys(["author","caption","details","images","curious_user","createdAt"])
         query.limit = 1000
         query.findObjectsInBackground{ (post, error)
             in
@@ -83,7 +83,9 @@ class QNATableViewController: UITableViewController{
         cell.post = post;
         cell.objectID = post.objectId
         cell.table_indexPath = indexPath;
-        cell.numofImages = images.count  // userd for QNATableViewCell number of sections.
+        cell.numofImages = images.count  // used for QNATableViewCell number of sections.
+        cell.timeLabel.text = timeConverter(time: post.createdAt!.timeIntervalSinceNow)
+
         
         // Already Liked??
         if (curious_users.contains((user?.username)!)){
@@ -91,11 +93,37 @@ class QNATableViewController: UITableViewController{
         } else {
             cell.curiosityButton.setBackgroundImage(UIImage(systemName: "questionmark.circle"), for: .normal)
         }
-        
-        
-        
-        
         return cell
+    }
+    
+    // double type time to Hour Minute String
+    func timeConverter(time : Double) -> String{
+        var new_time = time
+        if (time < 0){ // timeInterval is negative
+            new_time = new_time * -1.0 // to make positive double number
+        }
+        
+        if ( (new_time / 60) < 1 ){
+            return ("Just Posted!")
+        } else if ( (new_time / 60 ) < 60){
+            new_time = new_time / 60
+            new_time.round()
+            let output = String(format: "%.0f", new_time)
+            return ("Posted \(output) minutes ago")
+        } else if ( ((new_time / 60) >= 60) && ((new_time / 3600) < 24) ){
+            new_time = new_time / 3600
+            new_time.round()
+            let output = String(format: "%.0f", new_time)
+            return ("Posted \(output) hours ago")
+        } else if ( ((new_time / 3600) >= 24) )  {
+            new_time = new_time / 3600
+            new_time = new_time / 24
+            new_time.round()
+            let output = String(format: "%.0f", new_time)
+            return ("Posted \(output) days ago")
+        } else {
+            return ("WAKKKKK")
+        }
     }
     
 
