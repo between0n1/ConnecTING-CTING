@@ -75,21 +75,26 @@ class QNATableViewController: UITableViewController{
         let curious_level = curious_users.count
         let cell = tableView.dequeueReusableCell(withIdentifier: "QNATableViewCell") as! QNATableViewCell
         let user = PFUser.current() ;
+        let images = post.object(forKey: "images") as! NSArray // Array of images
+        
         cell.caption.text = (captions as! String)
         cell.details.text = (detailss as! String)
         cell.curiosityLabel.text = "\(curious_level)"
         cell.post = post;
         cell.objectID = post.objectId
         cell.table_indexPath = indexPath;
+        cell.numofImages = images.count  // userd for QNATableViewCell number of sections.
         
+        // Already Liked??
         if (curious_users.contains((user?.username)!)){
             cell.curiosityButton.setBackgroundImage(UIImage(systemName: "questionmark.circle.fill"), for: .normal)
         } else {
             cell.curiosityButton.setBackgroundImage(UIImage(systemName: "questionmark.circle"), for: .normal)
         }
         
-        let post_forcolelctionview = post.object(forKey: "images") as! NSArray
-        cell.numofImages = post_forcolelctionview.count
+        
+        
+        
         return cell
     }
     

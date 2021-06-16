@@ -26,10 +26,7 @@ class QNATableViewCell: UITableViewCell, UICollectionViewDelegate, UICollectionV
         super.awakeFromNib()
         self.QNACollectionView.delegate = self
         self.QNACollectionView.dataSource = self
-//        QNACollectionView.register(QNACollectionViewCell.self, forCellWithReuseIdentifier: "QNACollectionViewCell")
-//        self.QNACollectionView.automaticallyAdjustsScrollIndicatorInsets = false
         self.QNACollectionView.contentInsetAdjustmentBehavior = .never
-        
         self.QNACollectionView.reloadData()
     }
     
@@ -42,11 +39,7 @@ class QNATableViewCell: UITableViewCell, UICollectionViewDelegate, UICollectionV
     }
     
     
-    func resetCollectionView(){
-        guard !(post==nil) else {return}
-        post = nil;
-        QNACollectionView.reloadData()
-    }
+    
     
     @IBAction func curisoityButton(_ sender: Any) {
         
@@ -80,10 +73,6 @@ class QNATableViewCell: UITableViewCell, UICollectionViewDelegate, UICollectionV
                     self.curiosityButton.setBackgroundImage(UIImage(systemName: "questionmark.circle.fill"), for: .normal)
         
                 }
-//                let table = self.superview as! UITableView
-//                table.beginUpdates()
-//                table.reloadRows(at: [indexPath], with: .automatic)
-//                table.endUpdates()
                 self.post!["curious_user"] = post["curious_user"]
                 self.curiosityLabel.text = "\(curious_users.count)";
             }
@@ -94,6 +83,14 @@ class QNATableViewCell: UITableViewCell, UICollectionViewDelegate, UICollectionV
     override func prepareForReuse() {
         super.prepareForReuse()
         resetCollectionView()
+    }
+    
+    func resetCollectionView(){
+        guard !(post==nil) else {return}
+        post = nil;
+        self.QNACollectionView.contentInset.left = 10
+        self.QNACollectionView.contentInset.right = 10
+        QNACollectionView.reloadData()
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -123,6 +120,11 @@ class QNATableViewCell: UITableViewCell, UICollectionViewDelegate, UICollectionV
             let filter = AspectScaledToFillSizeFilter(size: size)
             cell.QNAImageView.af_setImage(withURL: url!, filter: filter)
             cell.QNAImageView.clipsToBounds = true
+            
+            if ( numofImages == 1 ){ // align the image at center if only one image i
+                self.QNACollectionView.contentInset.left = ((self.QNACollectionView.bounds.size.width - cell.bounds.size.width) / 2)
+                self.QNACollectionView.contentInset.right = ((self.QNACollectionView.bounds.size.width - cell.bounds.size.width) / 2)
+            }
         }
         return cell
     }
@@ -132,7 +134,8 @@ class QNATableViewCell: UITableViewCell, UICollectionViewDelegate, UICollectionV
     func collectionView(_ collectionView: UICollectionView,
                           layout collectionViewLayout: UICollectionViewLayout,
                           sizeForItemAt indexPath: IndexPath) -> CGSize{
-        let size = CGSize(width: 200, height: 200)
+        let width = UIScreen.main.bounds.width * 0.533
+        let size = CGSize(width: width, height: width)
         return size
     }
     
