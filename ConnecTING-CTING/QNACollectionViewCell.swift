@@ -15,6 +15,6 @@ class QNACollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var QNAImageView: UIImageView!
     override func prepareForReuse() {
         super.prepareForReuse()
-        
     }
+
 }

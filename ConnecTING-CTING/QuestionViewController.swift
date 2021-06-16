@@ -186,6 +186,8 @@ class QuestionViewController: UIViewController, UITextViewDelegate, UIImagePicke
                     post["author"] = PFUser.current()
                     post["caption"] = title
                     post["details"] = details
+                    post["curiosity"] = 0;
+                    post["curious_user"] = [] as [String]
                     post.setObject(images, forKey: "images")
                     post.saveInBackground { (succeeded, error)  in
                         if (succeeded) {
