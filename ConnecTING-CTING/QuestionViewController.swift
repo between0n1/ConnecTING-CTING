@@ -48,6 +48,7 @@ class QuestionViewController: UIViewController, UITextViewDelegate, UIImagePicke
     @IBOutlet weak var AddImageButton: UIButton!
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var detailsTextView: UITextView!
+    @IBOutlet weak var postActivityIndicator: UIActivityIndicatorView!
     let MaxImage : Int = 10
     var current_button = UIButton() // for imagePickerController
     let view_width = (UIScreen.main.bounds.width * 0.4538)
@@ -63,6 +64,8 @@ class QuestionViewController: UIViewController, UITextViewDelegate, UIImagePicke
         detailsTextView.addDoneButton(title: "Done", target: self, selector: #selector(tapDone(sender:)))
         titleTextField.addDoneButton(title: "Done", target: self, selector: #selector(tapDone(sender:)))
         setImageViews()
+        self.postActivityIndicator.isHidden = true
+
 
     }
     @objc func tapDone(sender: Any){
@@ -163,7 +166,10 @@ class QuestionViewController: UIViewController, UITextViewDelegate, UIImagePicke
     }
     
     
-    @IBAction func post(_ sender: Any) {
+    @IBAction func post(_ sender: UIButton) {
+        self.postActivityIndicator.isHidden = false
+        self.postActivityIndicator.startAnimating()
+        sender.isEnabled = false
         let post = PFObject(className: "posts")
         let details = detailsTextView.text
         let title = titleTextField.text
@@ -192,19 +198,24 @@ class QuestionViewController: UIViewController, UITextViewDelegate, UIImagePicke
                     post.saveInBackground { (succeeded, error)  in
                         if (succeeded) {
                             self.displayAlert(withTitle: "Succefully posted!", message: "Succefully posted!", success: true)
+                            sender.isEnabled = true
                         } else {
                             self.displayAlert(withTitle: "Failed to post", message: error!.localizedDescription, success: false)
+                            sender.isEnabled = true
                         }
                     }
                 }
             }
             else{
                 displayAlert(withTitle: "No details entered", message: "Please enter details", success: false)
+                sender.isEnabled = true
             }
         }
         else{
             displayAlert(withTitle: "No title entered", message: "Please enter title", success: false)
+            sender.isEnabled = true
         }
+        
     }
     
     
@@ -215,9 +226,16 @@ class QuestionViewController: UIViewController, UITextViewDelegate, UIImagePicke
     
     func displayAlert(withTitle title: String, message: String, success: Bool) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "Ok", style: .default, handler: {action in if success {self.dismiss(animated: true, completion: nil)}})
+        let okAction = UIAlertAction(title: "Ok", style: .default, handler: {action in if success {self.dismiss(animated: true, completion: nil)}
+        else{
+            self.postActivityIndicator.stopAnimating()
+            self.postActivityIndicator.isHidden = true
+        }
+        })
+        
         alert.addAction(okAction)
         self.present(alert, animated: true)
+        
     }
     
     

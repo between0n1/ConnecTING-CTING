@@ -424,6 +424,10 @@
                                     <constraint firstItem="Lne-od-SBC" firstAttribute="top" secondItem="Yuv-dF-bNt" secondAttribute="top" constant="-1" id="mxn-eN-8XG"/>
                                 </constraints>
                             </view>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="ZNc-Ou-Tcx">
+                                <rect key="frame" x="197" y="210" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Yly-MG-427"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -479,6 +483,7 @@
                         <outlet property="AddImageButton" destination="Hyp-Bs-ytZ" id="vyd-y4-OZd"/>
                         <outlet property="QuestionImageView" destination="sSW-MR-kx5" id="oyO-VR-G4i"/>
                         <outlet property="detailsTextView" destination="bDH-yR-USY" id="FUN-kq-YiY"/>
+                        <outlet property="postActivityIndicator" destination="ZNc-Ou-Tcx" id="pe7-9G-KOZ"/>
                         <outlet property="titleTextField" destination="1Qc-2Y-6UY" id="lBR-2f-wVM"/>
                     </connections>
                 </viewController>
