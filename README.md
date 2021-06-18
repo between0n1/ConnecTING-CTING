@@ -4,7 +4,7 @@
 
 # iOS Basic Social Media App
 
-iOS Basic Social Media App
+Hi, I am Sunhyeok Jung majoring in computer science and this is my first iOS app.
 
 features
 1. login / logout / register by using Parse database
