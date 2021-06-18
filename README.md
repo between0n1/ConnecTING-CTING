@@ -1,14 +1,11 @@
-# ConnecTING-CTING
-cting that allows people share ideas --
+# iOS Basic Social Media App
 
-2021 June 3:
-  - user can create account
-  - user can login
+iOS Basic Social Media App
 
+features
 
-
-June 5
-
-  - user can logout
-  - user can stay logged in 
-  - user can post questions
+1. login / logout / register by using Parse database
+2. User can stay logged in ( no need to enter id/password everytime )
+3. User can upload a post with texts and images
+4. User can see others' posts 
+5. User can like / unlike other users' posts
