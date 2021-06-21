@@ -15,7 +15,14 @@ class QNATableViewController: UITableViewController{
     var posts = [PFObject]()
 
     
+
     
+    @IBAction func tableViewRefresh(_ sender: Any) {
+        self.tableView.reloadData()
+        getQuery()
+        self.refreshControl?.endRefreshing()
+    }
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +31,6 @@ class QNATableViewController: UITableViewController{
         self.tableView.rowHeight = 360
         self.tableView.contentInsetAdjustmentBehavior = .never
         self.tableView.reloadData()
-
         
         
         
@@ -35,10 +41,7 @@ class QNATableViewController: UITableViewController{
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
     
-    
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    func getQuery(){
         let query = PFQuery(className: "posts")
         query.includeKeys(["author","caption","details","images","curious_user","createdAt"])
         query.limit = 1000
@@ -49,6 +52,12 @@ class QNATableViewController: UITableViewController{
                 self.tableView.reloadData()
             }
         }
+    }
+    
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        getQuery()
     }
 
     @IBAction func questionButton(_ sender: Any) {
@@ -66,15 +75,15 @@ class QNATableViewController: UITableViewController{
         return 1
     }
 
-    
+    // post["author"] : PFUser
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let post = posts[posts.count - indexPath.section - 1]
         let captions = post["caption"]
         let detailss = post["details"]
-        let curious_users = post["curious_user"] as! [String]
+        let curious_users = post["curious_user"] as! [PFUser]
         let curious_level = curious_users.count
         let cell = tableView.dequeueReusableCell(withIdentifier: "QNATableViewCell") as! QNATableViewCell
-        let user = PFUser.current() ;
+        let user = PFUser.current() as! PFUser;
         let images = post.object(forKey: "images") as! NSArray // Array of images
         
         cell.caption.text = (captions as! String)
@@ -88,7 +97,7 @@ class QNATableViewController: UITableViewController{
 
         
         // Already Liked??
-        if (curious_users.contains((user?.username)!)){
+        if (curious_users.contains(where: {$0.username == user.username})){
             cell.curiosityButton.setBackgroundImage(UIImage(systemName: "questionmark.circle.fill"), for: .normal)
         } else {
             cell.curiosityButton.setBackgroundImage(UIImage(systemName: "questionmark.circle"), for: .normal)
@@ -96,7 +105,23 @@ class QNATableViewController: UITableViewController{
         return cell
     }
     
-    // double type time to Hour Minute String
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "QNADetailsSegue", sender: Any?.self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let indexPath = tableView.indexPathForSelectedRow
+        if segue.identifier == "QNADetailsSegue" {
+            let post = posts[posts.count - indexPath!.section - 1]
+            let destination_ViewController = segue.destination as! QNADetailsViewController
+            destination_ViewController.post = post
+            destination_ViewController.time = timeConverter(time: post.createdAt!.timeIntervalSinceNow)
+        }
+    }
+    
+    
+    // double type number into corresponding minutes/ hours/ or days
     func timeConverter(time : Double) -> String{
         var new_time = time
         if (time < 0){ // timeInterval is negative

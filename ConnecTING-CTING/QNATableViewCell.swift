@@ -47,9 +47,11 @@ class QNATableViewCell: UITableViewCell, UICollectionViewDelegate, UICollectionV
         
         let curiosityButton = sender as! UIButton
         let cell = curiosityButton.superview?.superview as! QNATableViewCell
-        let user = PFUser.current();
+        let user = PFUser.current() as! PFUser;
         let indexPath = table_indexPath as! IndexPath
         let query = PFQuery(className: "posts")
+        
+        
         
         query.includeKey("curious_user")
         query.getObjectInBackground(withId: self.objectID!){ [self]
@@ -59,9 +61,9 @@ class QNATableViewCell: UITableViewCell, UICollectionViewDelegate, UICollectionV
                 print(error.localizedDescription)
             }
             else if let post = post {
-                var curious_users = post["curious_user"] as! [String]
-                if (curious_users.contains((user!.username!))){ // Is Current User Already Clicked
-                    let index = curious_users.firstIndex(of: user!.username!)
+                var curious_users = post["curious_user"] as! [PFUser]
+                if (curious_users.contains(where: {$0.username == user.username})){ // Is Current User Already Clicked
+                    let index = curious_users.firstIndex(where: {$0.username == user.username})
                     curious_users.remove(at: index!)
                     post["curious_user"] = curious_users
                     post.saveInBackground()
@@ -69,7 +71,7 @@ class QNATableViewCell: UITableViewCell, UICollectionViewDelegate, UICollectionV
                     
                 }
                 else { // Not Yet Clicked
-                    curious_users.append(user!.username!)
+                    curious_users.append(user)
                     post["curious_user"] = curious_users
                     post.saveInBackground()
                     self.curiosityButton.setBackgroundImage(UIImage(systemName: "questionmark.circle.fill"), for: .normal)
@@ -112,7 +114,7 @@ class QNATableViewCell: UITableViewCell, UICollectionViewDelegate, UICollectionV
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "QNACollectionViewCell", for: indexPath) as! QNACollectionViewCell
         numofImages = images.count
         cell.QNAImageView.image = nil
-        if (images != nil){
+        if (images != []){
             let image = images[indexPath[0]] as! PFFileObject
             let imageURL = image.url
             var url = URL(string: imageURL!)

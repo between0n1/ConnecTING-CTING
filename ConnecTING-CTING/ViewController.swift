@@ -13,16 +13,18 @@ class ViewController: UIViewController {
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loginIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var registerButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
     override func viewDidAppear(_ animated: Bool) {
-        
+
         // allowing user to stay logged in
         var currentUser = PFUser.current()
-        if currentUser != nil {
+        
+        if currentUser != nil && currentUser?.username != nil{
             self.performSegue(withIdentifier: "logintomenuSegue", sender: Any?.self)
         } else {
           // Show the signup or login screen
