@@ -17,6 +17,9 @@
 		7D59DDD1266D922E0042C923 /* QNATableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D59DDD0266D922E0042C923 /* QNATableViewCell.swift */; };
 		7D5E18CD266C110D0066D624 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5E18CC266C110D0066D624 /* SettingsTableViewController.swift */; };
 		7D73CE042681073F0063A09D /* QNADetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D73CE032681073F0063A09D /* QNADetailsViewController.swift */; };
+		7DA64DAA268184BA00B7B3A7 /* ideaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA64DA9268184BA00B7B3A7 /* ideaTableViewController.swift */; };
+		7DB54F9326813D120080AC94 /* QNADetailsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB54F9226813D120080AC94 /* QNADetailsCollectionViewCell.swift */; };
+		7DB54F98268160030080AC94 /* QNADetailsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB54F97268160030080AC94 /* QNADetailsCollectionViewCell.swift */; };
 		7DCE2DE626692A63002AE016 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCE2DE526692A63002AE016 /* AppDelegate.swift */; };
 		7DCE2DE826692A63002AE016 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCE2DE726692A63002AE016 /* SceneDelegate.swift */; };
 		7DCE2DEA26692A63002AE016 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCE2DE926692A63002AE016 /* ViewController.swift */; };
@@ -56,7 +59,10 @@
 		7D59DDCB266C461F0042C923 /* QuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
 		7D59DDD0266D922E0042C923 /* QNATableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QNATableViewCell.swift; sourceTree = "<group>"; };
 		7D5E18CC266C110D0066D624 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
-		7D73CE032681073F0063A09D /* QNADetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = QNADetailsViewController.swift; path = "ConnecTING-CTING/QNADetailsViewController.swift"; sourceTree = "<group>"; };
+		7D73CE032681073F0063A09D /* QNADetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QNADetailsViewController.swift; sourceTree = "<group>"; };
+		7DA64DA9268184BA00B7B3A7 /* ideaTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ideaTableViewController.swift; path = "ConnecTING-CTING/ideaTableViewController.swift"; sourceTree = "<group>"; };
+		7DB54F9226813D120080AC94 /* QNADetailsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = QNADetailsCollectionViewCell.swift; path = "/Users/sunhyeok/Desktop/personal_project/connecting/ConnecTING-CTING/ConnecTING-CTING/QNADetailsCollectionViewCell.swift"; sourceTree = "<absolute>"; };
+		7DB54F97268160030080AC94 /* QNADetailsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = QNADetailsCollectionViewCell.swift; path = "/Users/sunhyeok/Desktop/personal_project/connecting/ConnecTING-CTING/ConnecTING-CTING/QNADetailsCollectionViewCell.swift"; sourceTree = "<absolute>"; };
 		7DCE2DE226692A63002AE016 /* ConnecTING-CTING.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ConnecTING-CTING.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DCE2DE526692A63002AE016 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7DCE2DE726692A63002AE016 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -109,16 +115,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7DA64DA82681737300B7B3A7 /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				7DB54F97268160030080AC94 /* QNADetailsCollectionViewCell.swift */,
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
 		7DCE2DD926692A63002AE016 = {
 			isa = PBXGroup;
 			children = (
-				7D73CE032681073F0063A09D /* QNADetailsViewController.swift */,
+				7DA64DA9268184BA00B7B3A7 /* ideaTableViewController.swift */,
 				7DCE2DE426692A63002AE016 /* ConnecTING-CTING */,
 				7DCE2DFB26692A66002AE016 /* ConnecTING-CTINGTests */,
 				7DCE2E0626692A66002AE016 /* ConnecTING-CTINGUITests */,
 				7DCE2DE326692A63002AE016 /* Products */,
 				9F240755F292DB564CE86442 /* Pods */,
 				8F64FBF5BFB13793A3855544 /* Frameworks */,
+				7DA64DA82681737300B7B3A7 /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -135,11 +150,13 @@
 		7DCE2DE426692A63002AE016 /* ConnecTING-CTING */ = {
 			isa = PBXGroup;
 			children = (
+				7DCE2DEB26692A63002AE016 /* Main.storyboard */,
 				7DCE2DE526692A63002AE016 /* AppDelegate.swift */,
 				7DCE2DE726692A63002AE016 /* SceneDelegate.swift */,
 				7D228F5626710A7D00846F92 /* QuestionImageView.swift */,
 				7DCE2DE926692A63002AE016 /* ViewController.swift */,
-				7DCE2DEB26692A63002AE016 /* Main.storyboard */,
+				7DB54F9226813D120080AC94 /* QNADetailsCollectionViewCell.swift */,
+				7D73CE032681073F0063A09D /* QNADetailsViewController.swift */,
 				7D24672D266FB26100D71C04 /* QNACollectionViewCell.swift */,
 				7D59DDD0266D922E0042C923 /* QNATableViewCell.swift */,
 				7D25A282266C396F009A0100 /* QNATableViewController.swift */,
@@ -453,10 +470,13 @@
 			files = (
 				7D24672E266FB26100D71C04 /* QNACollectionViewCell.swift in Sources */,
 				7D59DDD1266D922E0042C923 /* QNATableViewCell.swift in Sources */,
+				7DB54F9326813D120080AC94 /* QNADetailsCollectionViewCell.swift in Sources */,
+				7DB54F98268160030080AC94 /* QNADetailsCollectionViewCell.swift in Sources */,
 				7DCE2DEA26692A63002AE016 /* ViewController.swift in Sources */,
 				7D228F5726710A7D00846F92 /* QuestionImageView.swift in Sources */,
 				7D5E18CD266C110D0066D624 /* SettingsTableViewController.swift in Sources */,
 				7DCE2DE626692A63002AE016 /* AppDelegate.swift in Sources */,
+				7DA64DAA268184BA00B7B3A7 /* ideaTableViewController.swift in Sources */,
 				7DCE2DE826692A63002AE016 /* SceneDelegate.swift in Sources */,
 				7DF82C9B2669330E00DF3405 /* RegisterViewController.swift in Sources */,
 				7D25A281266C3760009A0100 /* signoutTableViewCell.swift in Sources */,

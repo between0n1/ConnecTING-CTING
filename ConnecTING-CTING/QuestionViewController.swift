@@ -187,6 +187,7 @@ class QuestionViewController: UIViewController, UITextViewDelegate, UIImagePicke
                 }
                 if (images.isEmpty){
                     displayAlert(withTitle: "No images uploaded", message: "Please upload at least one image", success: false)
+                    sender.isEnabled = true
                 }
                 else{
                     post["author"] = PFUser.current()

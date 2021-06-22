@@ -17,6 +17,7 @@ class QNATableViewCell: UITableViewCell, UICollectionViewDelegate, UICollectionV
     @IBOutlet weak var QNACollectionView: UICollectionView!
     @IBOutlet weak var caption: UILabel!
     @IBOutlet weak var details: UILabel!
+    
     var view_width : CGFloat = UIScreen.main.bounds.width * (0.6)
     var post : PFObject? = nil
     var numofImages : Int = 0;
@@ -48,11 +49,10 @@ class QNATableViewCell: UITableViewCell, UICollectionViewDelegate, UICollectionV
         let curiosityButton = sender as! UIButton
         let cell = curiosityButton.superview?.superview as! QNATableViewCell
         let user = PFUser.current() as! PFUser;
+        let id = user.objectId
+
         let indexPath = table_indexPath as! IndexPath
         let query = PFQuery(className: "posts")
-        
-        
-        
         query.includeKey("curious_user")
         query.getObjectInBackground(withId: self.objectID!){ [self]
             (post : PFObject?, error: Error?)
@@ -62,25 +62,34 @@ class QNATableViewCell: UITableViewCell, UICollectionViewDelegate, UICollectionV
             }
             else if let post = post {
                 var curious_users = post["curious_user"] as! [PFUser]
+                var liked_posts = user["Liked_Posts"] as! [String]
+
                 if (curious_users.contains(where: {$0.username == user.username})){ // Is Current User Already Clicked
                     let index = curious_users.firstIndex(where: {$0.username == user.username})
                     curious_users.remove(at: index!)
                     post["curious_user"] = curious_users
                     post.saveInBackground()
                     self.curiosityButton.setBackgroundImage(UIImage(systemName: "questionmark.circle"), for: .normal)
-                    
+
+                    let liked_post_index = liked_posts.firstIndex(of: post.objectId!)
+                    liked_posts.remove(at: liked_post_index!)
+                    user["Liked_Posts"] = liked_posts
+                    user.saveInBackground()
+
                 }
                 else { // Not Yet Clicked
                     curious_users.append(user)
                     post["curious_user"] = curious_users
                     post.saveInBackground()
                     self.curiosityButton.setBackgroundImage(UIImage(systemName: "questionmark.circle.fill"), for: .normal)
-        
+
+                    liked_posts.append(post.objectId!)
+                    user["Liked_Posts"] = liked_posts
+                    user.saveInBackground()
                 }
                 self.post!["curious_user"] = post["curious_user"]
                 self.curiosityLabel.text = "\(curious_users.count)";
             }
-            
         }
     }
     
@@ -99,7 +108,6 @@ class QNATableViewCell: UITableViewCell, UICollectionViewDelegate, UICollectionV
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
         // Configure the view for the selected state
     }
     

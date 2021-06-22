@@ -28,8 +28,9 @@ class QNATableViewController: UITableViewController{
         super.viewDidLoad()
         self.tableView.delegate = self
         self.tableView.dataSource = self
-        self.tableView.rowHeight = 360
-        self.tableView.contentInsetAdjustmentBehavior = .never
+        var bounds = UIScreen.main.bounds
+        var height = bounds.size.height
+        self.tableView.rowHeight = height * 0.4434
         self.tableView.reloadData()
         
         
