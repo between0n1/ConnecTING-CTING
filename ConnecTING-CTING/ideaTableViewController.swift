@@ -10,11 +10,13 @@ import Parse
 import AlamofireImage
 
 class ideaTableViewController: UITableViewController {
-    
+    var posts : [PFObject] = []
     var liked_posts : [String] = [] // [ObjectID of Posts which is type of String]
-
+    var number_of_posts : Int = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        fetch_Liked_Posts()
         self.tableView.delegate = self
         self.tableView.dataSource = self
         var bounds = UIScreen.main.bounds
@@ -22,38 +24,105 @@ class ideaTableViewController: UITableViewController {
         self.tableView.rowHeight = height * 0.4434
         
         self.tableView.reloadData()
-        print(PFUser.current()?.objectId)
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
-        func getUserQuery(){
-            print("asd")
-        }
+    override func viewDidAppear(_ animated: Bool) {
+        fetch_Liked_Posts()
+        self.tableView.reloadData()
+    }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return number_of_posts
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return 1
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
 
-        // Configure the cell...
+        let post = posts[posts.count - indexPath.section - 1]
+        let captions = post["caption"]
+        let detailss = post["details"]
+        let curious_users = post["curious_user"] as! [PFUser]
+        let curious_level = curious_users.count
+        let cell = tableView.dequeueReusableCell(withIdentifier: "IdeaTableViewCell") as! IdeaTableViewCell
+        let user = PFUser.current() as! PFUser;
+        let images = post.object(forKey: "images") as! NSArray // Array of images
 
+        cell.caption.text = (captions as! String)
+        cell.details.text = (detailss as! String)
+        cell.curiosityLabel.text = "\(curious_level)"
+        cell.post = post;
+        cell.objectID = post.objectId
+        cell.table_indexPath = indexPath;
+        cell.numofImages = images.count  // used for QNATableViewCell number of sections.
+        cell.timeLabel.text = timeConverter(time: post.createdAt!.timeIntervalSinceNow)
+        // Already Liked??
+        if (curious_users.contains(where: {$0.objectId == user.objectId})){
+            cell.curiosityButton.setBackgroundImage(UIImage(systemName: "questionmark.circle.fill"), for: .normal)
+        } else {
+            cell.curiosityButton.setBackgroundImage(UIImage(systemName: "questionmark.circle"), for: .normal)
+        }
         return cell
     }
-    */
+
+    
+    
+    func fetch_Liked_Posts(){
+        let user = PFUser.current() as! PFUser
+        self.liked_posts = user["Liked_Posts"] as! [String]
+        self.number_of_posts = self.liked_posts.count
+        
+        for i in 0...self.number_of_posts - 1 {
+            let postId = self.liked_posts[i] as? String
+            let post = try? PFQuery.getObjectOfClass("posts", objectId: postId!) as? PFObject
+            self.posts.append(post!)
+        }
+        print(self.posts)
+        
+    }
+    
+    func timeConverter(time : Double) -> String{
+        var new_time = time
+        if (time < 0){ // timeInterval is negative
+            new_time = new_time * -1.0 // to make positive double number
+        }
+        
+        if ( (new_time / 60) < 1 ){
+            return ("Just Posted!")
+        } else if ( (new_time / 60 ) < 60){
+            new_time = new_time / 60
+            new_time.round()
+            let output = String(format: "%.0f", new_time)
+            return ("Posted \(output) minutes ago")
+        } else if ( ((new_time / 60) >= 60) && ((new_time / 3600) < 24) ){
+            new_time = new_time / 3600
+            new_time.round()
+            let output = String(format: "%.0f", new_time)
+            return ("Posted \(output) hours ago")
+        } else if ( ((new_time / 3600) >= 24) )  {
+            new_time = new_time / 3600
+            new_time = new_time / 24
+            new_time.round()
+            let output = String(format: "%.0f", new_time)
+            return ("Posted \(output) days ago")
+        } else {
+            return ("WAKKKKK")
+        }
+    }
+    
+
+    
 
     /*
     // Override to support conditional editing of the table view.

@@ -28,6 +28,8 @@
 		7DCE2DF226692A66002AE016 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DCE2DF026692A66002AE016 /* LaunchScreen.storyboard */; };
 		7DCE2DFD26692A66002AE016 /* ConnecTING_CTINGTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCE2DFC26692A66002AE016 /* ConnecTING_CTINGTests.swift */; };
 		7DCE2E0826692A66002AE016 /* ConnecTING_CTINGUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCE2E0726692A66002AE016 /* ConnecTING_CTINGUITests.swift */; };
+		7DD7784026824CF00007DD36 /* IdeaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD7783F26824CF00007DD36 /* IdeaTableViewCell.swift */; };
+		7DD7784226825EAB0007DD36 /* ideaCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD7784126825EAB0007DD36 /* ideaCollectionViewCell.swift */; };
 		7DF82C9B2669330E00DF3405 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF82C9A2669330E00DF3405 /* RegisterViewController.swift */; };
 		F0252B2F6A28771A10B7CE2E /* Pods_ConnecTING_CTING.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C596BA5A8D33B967741A6B8D /* Pods_ConnecTING_CTING.framework */; };
 /* End PBXBuildFile section */
@@ -60,7 +62,7 @@
 		7D59DDD0266D922E0042C923 /* QNATableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QNATableViewCell.swift; sourceTree = "<group>"; };
 		7D5E18CC266C110D0066D624 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		7D73CE032681073F0063A09D /* QNADetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QNADetailsViewController.swift; sourceTree = "<group>"; };
-		7DA64DA9268184BA00B7B3A7 /* ideaTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ideaTableViewController.swift; path = "ConnecTING-CTING/ideaTableViewController.swift"; sourceTree = "<group>"; };
+		7DA64DA9268184BA00B7B3A7 /* ideaTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ideaTableViewController.swift; sourceTree = "<group>"; };
 		7DB54F9226813D120080AC94 /* QNADetailsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = QNADetailsCollectionViewCell.swift; path = "/Users/sunhyeok/Desktop/personal_project/connecting/ConnecTING-CTING/ConnecTING-CTING/QNADetailsCollectionViewCell.swift"; sourceTree = "<absolute>"; };
 		7DB54F97268160030080AC94 /* QNADetailsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = QNADetailsCollectionViewCell.swift; path = "/Users/sunhyeok/Desktop/personal_project/connecting/ConnecTING-CTING/ConnecTING-CTING/QNADetailsCollectionViewCell.swift"; sourceTree = "<absolute>"; };
 		7DCE2DE226692A63002AE016 /* ConnecTING-CTING.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ConnecTING-CTING.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -77,6 +79,8 @@
 		7DCE2E0326692A66002AE016 /* ConnecTING-CTINGUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ConnecTING-CTINGUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DCE2E0726692A66002AE016 /* ConnecTING_CTINGUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnecTING_CTINGUITests.swift; sourceTree = "<group>"; };
 		7DCE2E0926692A66002AE016 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7DD7783F26824CF00007DD36 /* IdeaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdeaTableViewCell.swift; sourceTree = "<group>"; };
+		7DD7784126825EAB0007DD36 /* ideaCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ideaCollectionViewCell.swift; sourceTree = "<group>"; };
 		7DF82C9A2669330E00DF3405 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		8A4C2F0F301C9C805DEF5F6E /* Pods-ConnecTING-CTING-ConnecTING-CTINGUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConnecTING-CTING-ConnecTING-CTINGUITests.debug.xcconfig"; path = "Target Support Files/Pods-ConnecTING-CTING-ConnecTING-CTINGUITests/Pods-ConnecTING-CTING-ConnecTING-CTINGUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		99FE035ED627C2F2AFA09E7B /* Pods-ConnecTING-CTINGTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConnecTING-CTINGTests.debug.xcconfig"; path = "Target Support Files/Pods-ConnecTING-CTINGTests/Pods-ConnecTING-CTINGTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -126,7 +130,6 @@
 		7DCE2DD926692A63002AE016 = {
 			isa = PBXGroup;
 			children = (
-				7DA64DA9268184BA00B7B3A7 /* ideaTableViewController.swift */,
 				7DCE2DE426692A63002AE016 /* ConnecTING-CTING */,
 				7DCE2DFB26692A66002AE016 /* ConnecTING-CTINGTests */,
 				7DCE2E0626692A66002AE016 /* ConnecTING-CTINGUITests */,
@@ -151,6 +154,9 @@
 			isa = PBXGroup;
 			children = (
 				7DCE2DEB26692A63002AE016 /* Main.storyboard */,
+				7DD7784126825EAB0007DD36 /* ideaCollectionViewCell.swift */,
+				7DD7783F26824CF00007DD36 /* IdeaTableViewCell.swift */,
+				7DA64DA9268184BA00B7B3A7 /* ideaTableViewController.swift */,
 				7DCE2DE526692A63002AE016 /* AppDelegate.swift */,
 				7DCE2DE726692A63002AE016 /* SceneDelegate.swift */,
 				7D228F5626710A7D00846F92 /* QuestionImageView.swift */,
@@ -476,6 +482,8 @@
 				7D228F5726710A7D00846F92 /* QuestionImageView.swift in Sources */,
 				7D5E18CD266C110D0066D624 /* SettingsTableViewController.swift in Sources */,
 				7DCE2DE626692A63002AE016 /* AppDelegate.swift in Sources */,
+				7DD7784026824CF00007DD36 /* IdeaTableViewCell.swift in Sources */,
+				7DD7784226825EAB0007DD36 /* ideaCollectionViewCell.swift in Sources */,
 				7DA64DAA268184BA00B7B3A7 /* ideaTableViewController.swift in Sources */,
 				7DCE2DE826692A63002AE016 /* SceneDelegate.swift in Sources */,
 				7DF82C9B2669330E00DF3405 /* RegisterViewController.swift in Sources */,
