@@ -2,6 +2,10 @@
 
 
 
+
+
+
+
 # iOS Basic Social Media App
 
 Hi, I am Sunhyeok Jung majoring in computer science and this is my first iOS app.
@@ -15,7 +19,7 @@ features
 
 
 
-
+https://user-images.githubusercontent.com/67476090/123016093-dd39b080-d397-11eb-9866-3a3ca05bea76.mov
 
 https://user-images.githubusercontent.com/67476090/123015803-30f7ca00-d397-11eb-92a0-6f10ab56323a.mov
 
