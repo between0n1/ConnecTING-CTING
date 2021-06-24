@@ -9,6 +9,9 @@
 # iOS Basic Social Media App
 
 Hi, I am Sunhyeok Jung majoring in computer science and this is my first iOS app.
+I designed an iOS Social Media App using Swift and Parse
+Images uploaded by users are stored persistently in an online database
+
 
 features
 1. login / logout / register by using Parse database
